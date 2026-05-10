@@ -1,438 +1,372 @@
-:root {
+<!DOCTYPE html>
+<html lang="en">
 
-    --bg-dark: #020408;
-    --card-bg: rgba(13, 17, 23, 0.7);
-    --cyan-glow: #00f2ff;
-    --border: rgba(0, 242, 255, 0.15);
-    --text-soft: #b8c0cc;
+<head>
 
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>Orbital Systems | AI Infrastructure</title>
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-body {
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    background:
-    radial-gradient(circle at center, #0a192f 0%, #020408 100%);
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-    color: white;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-}
+</head>
 
-/* NAVIGATION */
+<body>
 
-nav {
+    <!-- GRID OVERLAY -->
+    <div class="grid-overlay"></div>
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    <!-- NAVIGATION -->
+    <nav>
 
-    padding: 20px 5%;
+        <div class="logo">
+            ORBITAL<span>SYSTEMS</span>
+        </div>
 
-    background: rgba(2, 4, 8, 0.8);
+        <div class="nav-links">
 
-    backdrop-filter: blur(10px);
+            <a href="#about">Infrastructure</a>
+            <a href="#services">Divisions</a>
+            <a href="#agents">AI Agents</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#contact" class="nav-btn">Connect</a>
 
-    position: fixed;
+        </div>
 
-    width: 100%;
+    </nav>
 
-    top: 0;
+    <!-- HERO SECTION -->
+    <section class="hero">
 
-    z-index: 1000;
+        <div class="status-pill">
+            System Status: Operational
+        </div>
+
+        <h1>ORBITAL SYSTEMS</h1>
+
+        <p>
+            Engineering modular AI ecosystems and affordable digital infrastructure
+            for communities, organizations, entrepreneurs, and operational systems.
+        </p>
 
-    border-bottom: 1px solid var(--border);
+        <div class="hero-buttons">
 
-}
+            <a href="#about" class="btn">
+                Explore Infrastructure
+            </a>
 
-.logo {
+            <a href="#contact" class="btn secondary-btn">
+                Initialize Contact
+            </a>
 
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: 1px;
+        </div>
 
-}
+    </section>
 
-.logo span {
-
-    color: var(--cyan-glow);
-    text-shadow: 0 0 10px var(--cyan-glow);
-
-}
-
-.nav-links {
-
-    display: flex;
-    gap: 30px;
-    align-items: center;
-
-}
-
-.nav-links a {
-
-    color: white;
-    text-decoration: none;
-    transition: 0.3s ease;
-    font-size: 0.95rem;
-
-}
-
-.nav-links a:hover {
-
-    color: var(--cyan-glow);
-    text-shadow: 0 0 10px var(--cyan-glow);
-
-}
-
-.nav-btn {
-
-    border: 1px solid var(--cyan-glow);
-    padding: 10px 18px;
-    border-radius: 8px;
-
-}
-
-/* HERO */
-
-.hero {
-
-    padding: 220px 20px 150px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-
-}
-
-.hero::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 700px;
-    height: 700px;
-
-    background:
-    radial-gradient(circle,
-    rgba(0,242,255,0.15),
-    transparent 70%);
-
-    top: -250px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    animation: pulse 6s infinite;
-
-}
-
-@keyframes pulse {
-
-    0% {
-        transform: translateX(-50%) scale(1);
-    }
-
-    50% {
-        transform: translateX(-50%) scale(1.15);
-    }
-
-    100% {
-        transform: translateX(-50%) scale(1);
-    }
-
-}
-
-.status-pill {
-
-    display: inline-block;
-
-    padding: 8px 18px;
-
-    border: 1px solid var(--cyan-glow);
-
-    border-radius: 30px;
-
-    color: var(--cyan-glow);
-
-    font-size: 0.75rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 30px;
-
-}
-
-.hero h1 {
-
-    font-size: 5rem;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
-
-}
-
-.hero p {
-
-    max-width: 850px;
-
-    margin: auto;
-
-    font-size: 1.2rem;
-
-    color: var(--text-soft);
-
-    line-height: 1.8;
-
-    position: relative;
-    z-index: 2;
-
-}
-
-/* BUTTON */
-
-.btn {
-
-    display: inline-block;
-
-    margin-top: 40px;
-
-    padding: 18px 40px;
-
-    border: 1px solid var(--cyan-glow);
-
-    color: var(--cyan-glow);
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: 0.3s ease;
-
-    box-shadow: 0 0 15px rgba(0,242,255,0.2);
-
-    position: relative;
-    z-index: 2;
-
-}
-
-.btn:hover {
-
-    background: var(--cyan-glow);
-
-    color: black;
-
-    box-shadow: 0 0 30px var(--cyan-glow);
-
-}
-
-/* SECTIONS */
-
-.section {
-
-    padding: 100px 10%;
-
-}
-
-.section-title {
-
-    font-size: 2.5rem;
-
-    margin-bottom: 25px;
-
-    text-align: center;
-
-}
-
-/* ABOUT */
-
-.about-text {
-
-    max-width: 900px;
-
-    margin: auto;
-
-    text-align: center;
-
-    color: var(--text-soft);
-
-    line-height: 1.9;
-
-    font-size: 1.05rem;
-
-}
-
-/* CARDS */
-
-.card-container {
-
-    display: grid;
-
-    grid-template-columns:
-    repeat(auto-fit, minmax(300px, 1fr));
-
-    gap: 30px;
-
-    margin-top: 60px;
-
-}
-
-.card {
-
-    background: var(--card-bg);
-
-    padding: 40px;
-
-    border: 1px solid var(--border);
-
-    backdrop-filter: blur(5px);
-
-    transition: 0.4s ease;
-
-    border-radius: 16px;
-
-}
-
-.card:hover {
-
-    border-color: var(--cyan-glow);
-
-    transform: translateY(-10px);
-
-    box-shadow: 0 0 25px rgba(0,242,255,0.15);
-
-}
-
-.card i {
-
-    font-size: 2rem;
-
-    color: var(--cyan-glow);
-
-    margin-bottom: 20px;
-
-}
-
-.card h3 {
-
-    margin-bottom: 15px;
-
-    font-size: 1.3rem;
-
-}
-
-.card p {
-
-    color: var(--text-soft);
-
-    line-height: 1.7;
-
-}
-
-/* ROADMAP */
-
-.roadmap {
-
-    display: grid;
-
-    grid-template-columns:
-    repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 25px;
-
-    margin-top: 50px;
-
-}
-
-.roadmap-item {
-
-    border-left: 3px solid var(--cyan-glow);
-
-    padding: 20px;
-
-    background: rgba(255,255,255,0.03);
-
-}
-
-.roadmap-item h3 {
-
-    margin-bottom: 10px;
-
-    color: var(--cyan-glow);
-
-}
-
-/* FOOTER */
-
-footer {
-
-    text-align: center;
-
-    padding: 60px 20px;
-
-    border-top: 1px solid var(--border);
-
-    color: #7d8590;
-
-}
-
-footer h2 {
-
-    margin-bottom: 15px;
-
-    color: white;
-
-}
-
-footer p {
-
-    margin-bottom: 10px;
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px) {
-
-    nav {
-
-        flex-direction: column;
-
-        gap: 15px;
-
-    }
-
-    .nav-links {
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 15px;
-
-    }
-
-    .hero h1 {
-
-        font-size: 2.8rem;
-
-    }
-
-    .hero p {
-
-        font-size: 1rem;
-
-    }
-
-}
+    <!-- ABOUT -->
+    <section id="about" class="section">
+
+        <h2 class="section-title">
+            What is Orbital Systems?
+        </h2>
+
+        <p class="about-text">
+            Orbital Systems is a modular AI and infrastructure ecosystem designed
+            to help organizations modernize through automation, AI systems,
+            websites, dashboards, operational tools, and scalable digital infrastructure.
+            The mission is to make advanced technology more affordable,
+            understandable, and accessible for communities, entrepreneurs,
+            and organizations.
+        </p>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+
+        <h2 class="section-title">
+            Operational Divisions
+        </h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>Orbital AI</h3>
+                <p>
+                    Autonomous AI agents, workflow automation,
+                    and local AI integration systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h3>Orbital Web</h3>
+                <p>
+                    Websites, dashboards, portals,
+                    deployment systems, and infrastructure.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-server"></i>
+                <h3>Orbital Data</h3>
+                <p>
+                    Operational databases, analytics,
+                    reporting systems, and infrastructure intelligence.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-photo-film"></i>
+                <h3>Orbital Media</h3>
+                <p>
+                    Branding, visuals, social media assets,
+                    marketing systems, and digital media.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-cart-shopping"></i>
+                <h3>Orbital Commerce</h3>
+                <p>
+                    Inventory systems, reseller tools,
+                    commerce automation, and operational support.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-gears"></i>
+                <h3>Orbital Automation</h3>
+                <p>
+                    Workflow pipelines, AI orchestration,
+                    automation systems, and infrastructure routing.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- AI AGENTS -->
+    <section id="agents" class="section">
+
+        <h2 class="section-title">
+            AI Agent Network
+        </h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <i class="fas fa-robot"></i>
+                <h3>Intake Agent</h3>
+                <p>
+                    Handles onboarding, project intake,
+                    lead organization, and routing systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-box"></i>
+                <h3>Inventory Agent</h3>
+                <p>
+                    Tracks inventory, pricing systems,
+                    operational assets, and analytics.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Website Assistant</h3>
+                <p>
+                    Supports web systems, deployment workflows,
+                    landing pages, and infrastructure support.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Marketing Agent</h3>
+                <p>
+                    Generates branding content,
+                    campaign messaging, and digital communications.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Community Assistant</h3>
+                <p>
+                    Helps communities and organizations
+                    access digital tools and information systems.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Automation Engineer</h3>
+                <p>
+                    Connects systems together through
+                    workflow automation and infrastructure pipelines.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INFRASTRUCTURE -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Infrastructure Stack
+        </h2>
+
+        <div class="card-container">
+
+            <div class="card">
+
+                <h3>Local AI Systems</h3>
+
+                <p>
+                    Running local LLM infrastructure using Ollama
+                    and open-source AI technologies.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Automation Pipelines</h3>
+
+                <p>
+                    Workflow orchestration using n8n,
+                    Flowise, and modular automation systems.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Cloud & Deployment</h3>
+
+                <p>
+                    GitHub, Netlify, Docker,
+                    and scalable deployment infrastructure.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TERMINAL -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Orbital Node Status
+        </h2>
+
+        <div class="terminal">
+
+            <p>> Booting Orbital Infrastructure...</p>
+            <p>> Initializing AI Agent Network...</p>
+            <p>> Connecting Automation Pipelines...</p>
+            <p>> Deploying Infrastructure Systems...</p>
+            <p>> Local AI Runtime: ACTIVE</p>
+            <p>> Workflow Systems: ONLINE</p>
+            <p>> System Status: OPERATIONAL</p>
+
+        </div>
+
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" class="section">
+
+        <h2 class="section-title">
+            Development Roadmap
+        </h2>
+
+        <div class="roadmap">
+
+            <div class="roadmap-item">
+                <h3>Phase 1</h3>
+                <p>Website & Infrastructure Foundation</p>
+            </div>
+
+            <div class="roadmap-item">
+                <h3>Phase 2</h3>
+                <p>AI Agents & Workflow Automation</p>
+            </div>
+
+            <div class="roadmap-item">
+                <h3>Phase 3</h3>
+                <p>Dashboards & Operational Systems</p>
+            </div>
+
+            <div class="roadmap-item">
+                <h3>Phase 4</h3>
+                <p>Community Ecosystem Expansion</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+
+        <h2>Orbital Systems</h2>
+
+        <p>
+            Engineering AI Infrastructure & Community Technology
+        </p>
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Founder:</strong> Jose Mendoza
+            </p>
+
+            <p>
+                Mechanical Engineer
+            </p>
+
+            <p>
+                707 N Alameda St, Compton CA 90220
+            </p>
+
+            <p>
+                (310) 667-2849
+            </p>
+
+        </div>
+
+        <div class="footer-buttons">
+
+            <a href="tel:13106672849" class="btn">
+                Call Orbital Systems
+            </a>
+
+        </div>
+
+        <p class="footer-note">
+            Built using modular infrastructure, open technologies,
+            and scalable systems engineering.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
