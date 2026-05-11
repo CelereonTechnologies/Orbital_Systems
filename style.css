@@ -26,6 +26,45 @@ overflow-x:hidden;
 
 }
 
+/* BACKGROUND MOTION */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:140%;
+height:140%;
+
+top:-20%;
+left:-20%;
+
+background:
+radial-gradient(circle,
+rgba(255,123,0,0.05),
+transparent 60%);
+
+animation:backgroundMove 12s infinite alternate ease-in-out;
+
+pointer-events:none;
+
+z-index:-3;
+
+}
+
+@keyframes backgroundMove{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(60px,40px);
+}
+
+}
+
 /* HERO */
 
 .hero{
@@ -271,6 +310,198 @@ color:#ff7b00;
 
 }
 
+/* LIVE STATUS */
+
+.live-status{
+
+padding:100px 7%;
+
+background:#080808;
+
+border-top:1px solid #27272a;
+border-bottom:1px solid #27272a;
+
+}
+
+.status-header{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.status-header h2{
+
+font-size:2.8rem;
+
+margin-bottom:15px;
+
+}
+
+.status-header p{
+
+color:#a1a1aa;
+
+}
+
+.status-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(240px,1fr));
+
+gap:24px;
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+.status-box{
+
+background:#111111;
+
+border:1px solid #27272a;
+
+border-radius:24px;
+
+padding:35px;
+
+text-align:center;
+
+transition:0.3s;
+
+}
+
+.status-box:hover{
+
+border-color:rgba(255,123,0,0.5);
+
+transform:translateY(-5px);
+
+}
+
+.status-box h3{
+
+margin:20px 0 10px;
+
+font-size:1.3rem;
+
+}
+
+.status-box span{
+
+color:#ff7b00;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+
+.pulse-dot{
+
+width:14px;
+height:14px;
+
+background:#ff7b00;
+
+border-radius:50%;
+
+margin:auto;
+
+animation:pulse 2s infinite;
+
+box-shadow:
+0 0 15px #ff7b00;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+opacity:1;
+}
+
+50%{
+transform:scale(1.4);
+opacity:0.6;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+/* METRICS */
+
+.metrics-section{
+
+padding:100px 7%;
+
+}
+
+.metrics-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:24px;
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+.metric-card{
+
+background:#0f0f10;
+
+border:1px solid #27272a;
+
+padding:40px;
+
+border-radius:24px;
+
+text-align:center;
+
+transition:0.3s;
+
+}
+
+.metric-card:hover{
+
+border-color:rgba(255,123,0,0.5);
+
+transform:translateY(-6px);
+
+}
+
+.metric-card h2{
+
+font-size:3rem;
+
+color:#ff7b00;
+
+margin-bottom:12px;
+
+}
+
+.metric-card p{
+
+color:#a1a1aa;
+
+}
+
 /* GENERAL */
 
 .section{
@@ -438,6 +669,73 @@ line-height:1.8;
 
 }
 
+/* FLOW */
+
+.flow-section{
+
+padding:120px 7%;
+
+background:#080808;
+
+border-top:1px solid #27272a;
+border-bottom:1px solid #27272a;
+
+}
+
+.flow-grid{
+
+display:flex;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+
+gap:18px;
+
+margin-top:70px;
+
+}
+
+.flow-box{
+
+padding:22px 34px;
+
+background:#111111;
+
+border:1px solid #27272a;
+
+border-radius:18px;
+
+font-weight:700;
+
+color:#ffb36b;
+
+transition:0.3s;
+
+}
+
+.flow-box:hover{
+
+border-color:#ff7b00;
+
+transform:translateY(-5px);
+
+}
+
+.flow-line{
+
+width:50px;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#ff7b00,
+transparent
+);
+
+}
+
 /* AGENTS */
 
 .agents-grid{
@@ -486,6 +784,93 @@ color:#ffb36b;
 color:#a1a1aa;
 
 line-height:1.8;
+
+}
+
+/* TERMINAL */
+
+.terminal-section{
+
+padding:120px 7%;
+
+}
+
+.terminal-window{
+
+max-width:1100px;
+
+margin:auto;
+
+background:#050505;
+
+border:1px solid #27272a;
+
+border-radius:24px;
+
+overflow:hidden;
+
+box-shadow:
+0 0 40px rgba(255,123,0,0.08);
+
+}
+
+.terminal-top{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:18px 24px;
+
+background:#111111;
+
+border-bottom:1px solid #27272a;
+
+}
+
+.terminal-dot{
+
+width:12px;
+height:12px;
+
+border-radius:50%;
+
+}
+
+.red{
+background:#ff5f56;
+}
+
+.yellow{
+background:#ffbd2e;
+}
+
+.green{
+background:#27c93f;
+}
+
+.terminal-body{
+
+padding:40px;
+
+font-family:monospace;
+
+line-height:2.2;
+
+color:#ffb36b;
+
+font-size:1rem;
+
+}
+
+.terminal-end{
+
+margin-top:20px;
+
+color:#ff7b00;
+
+text-shadow:
+0 0 12px rgba(255,123,0,0.5);
 
 }
 
@@ -687,6 +1072,12 @@ padding:40px 28px;
 
 flex-direction:column;
 text-align:center;
+
+}
+
+.flow-line{
+
+display:none;
 
 }
 
