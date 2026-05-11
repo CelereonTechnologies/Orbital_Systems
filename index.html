@@ -5,53 +5,31 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-BLACK FYR3 SYSTEMS | Modern Systems & Digital Infrastructure
+BLACK FYR3 SYSTEMS
 </title>
-
-<!-- GOOGLE FONT -->
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-<!-- FONT AWESOME -->
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 <style>
-
-/* ===================================================== */
-/* ROOT */
-/* ===================================================== */
 
 :root{
 
---bg-dark:#050505;
+--bg:#050505;
 --orange:#ff7b00;
---orange-soft:#ff9a3d;
+--text:#ffffff;
+--soft:#bdbdbd;
 --border:rgba(255,123,0,0.2);
---text-soft:#b8b8b8;
 
 }
-
-/* ===================================================== */
-/* GLOBAL */
-/* ===================================================== */
 
 *{
 
 margin:0;
 padding:0;
 box-sizing:border-box;
-
-}
-
-html{
-
-scroll-behavior:smooth;
 
 }
 
@@ -70,34 +48,13 @@ overflow-x:hidden;
 
 }
 
-/* ===================================================== */
-/* GRID BACKGROUND */
-/* ===================================================== */
+/* NAV */
 
-.grid-overlay{
+nav{
 
 position:fixed;
 
 width:100%;
-height:100%;
-
-background-image:
-linear-gradient(rgba(255,123,0,0.04) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,123,0,0.04) 1px, transparent 1px);
-
-background-size:50px 50px;
-
-opacity:0.12;
-
-z-index:-2;
-
-}
-
-/* ===================================================== */
-/* NAVIGATION */
-/* ===================================================== */
-
-nav{
 
 display:flex;
 justify-content:space-between;
@@ -105,11 +62,7 @@ align-items:center;
 
 padding:20px 5%;
 
-position:fixed;
-
-width:100%;
-
-background:rgba(5,5,5,0.82);
+background:rgba(0,0,0,0.85);
 
 backdrop-filter:blur(10px);
 
@@ -124,16 +77,13 @@ z-index:999;
 font-size:1.4rem;
 font-weight:800;
 
-letter-spacing:1px;
-
 }
 
 .logo span{
 
 color:var(--orange);
 
-text-shadow:
-0 0 12px var(--orange);
+text-shadow:0 0 10px var(--orange);
 
 }
 
@@ -150,9 +100,7 @@ text-decoration:none;
 
 color:white;
 
-transition:0.3s ease;
-
-font-size:0.95rem;
+transition:0.3s;
 
 }
 
@@ -162,9 +110,7 @@ color:var(--orange);
 
 }
 
-/* ===================================================== */
 /* HERO */
-/* ===================================================== */
 
 .hero{
 
@@ -172,13 +118,9 @@ padding:220px 20px 150px;
 
 text-align:center;
 
-position:relative;
-
-overflow:hidden;
-
 }
 
-.status-pill{
+.status{
 
 display:inline-block;
 
@@ -192,11 +134,9 @@ color:var(--orange);
 
 margin-bottom:30px;
 
-font-size:0.85rem;
+font-size:0.8rem;
 
 letter-spacing:2px;
-
-text-transform:uppercase;
 
 }
 
@@ -204,12 +144,7 @@ text-transform:uppercase;
 
 font-size:5rem;
 
-font-weight:800;
-
 margin-bottom:25px;
-
-text-shadow:
-0 0 30px rgba(255,123,0,0.2);
 
 }
 
@@ -223,23 +158,7 @@ line-height:1.8;
 
 font-size:1.1rem;
 
-color:var(--text-soft);
-
-}
-
-/* ===================================================== */
-/* BUTTONS */
-/* ===================================================== */
-
-.hero-buttons{
-
-margin-top:40px;
-
-display:flex;
-justify-content:center;
-gap:25px;
-
-flex-wrap:wrap;
+color:var(--soft);
 
 }
 
@@ -247,7 +166,9 @@ flex-wrap:wrap;
 
 display:inline-block;
 
-padding:18px 38px;
+margin-top:40px;
+
+padding:18px 40px;
 
 border:1px solid var(--orange);
 
@@ -255,13 +176,7 @@ color:var(--orange);
 
 text-decoration:none;
 
-transition:0.3s ease;
-
-background:transparent;
-
-cursor:pointer;
-
-font-weight:600;
+transition:0.3s;
 
 }
 
@@ -271,86 +186,11 @@ background:var(--orange);
 
 color:black;
 
-box-shadow:
-0 0 30px var(--orange);
+box-shadow:0 0 25px var(--orange);
 
 }
 
-/* ===================================================== */
-/* EMBERS */
-/* ===================================================== */
-
-.ember{
-
-position:absolute;
-
-width:12px;
-height:12px;
-
-background:var(--orange);
-
-border-radius:50%;
-
-filter:blur(3px);
-
-animation:floatEmber 6s infinite ease-in-out;
-
-}
-
-.ember1{
-
-left:20%;
-top:70%;
-
-}
-
-.ember2{
-
-left:60%;
-top:65%;
-
-animation-delay:2s;
-
-}
-
-.ember3{
-
-left:80%;
-top:75%;
-
-animation-delay:4s;
-
-}
-
-@keyframes floatEmber{
-
-0%{
-
-transform:translateY(0);
-
-opacity:0;
-
-}
-
-50%{
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translateY(-120px);
-
-opacity:0;
-
-}
-
-}
-
-/* ===================================================== */
-/* SECTIONS */
-/* ===================================================== */
+/* SECTION */
 
 .section{
 
@@ -362,31 +202,15 @@ padding:100px 10%;
 
 text-align:center;
 
-font-size:2.6rem;
+font-size:2.5rem;
 
-margin-bottom:30px;
-
-}
-
-.about-text{
-
-max-width:900px;
-
-margin:auto;
-
-text-align:center;
-
-line-height:1.8;
-
-color:var(--text-soft);
+margin-bottom:60px;
 
 }
 
-/* ===================================================== */
 /* CARDS */
-/* ===================================================== */
 
-.card-container{
+.cards{
 
 display:grid;
 
@@ -395,25 +219,20 @@ repeat(auto-fit,minmax(300px,1fr));
 
 gap:30px;
 
-margin-top:60px;
-
 }
 
 .card{
 
 background:
-linear-gradient(
-145deg,
-rgba(20,20,20,0.95),
-rgba(8,8,8,0.96));
+rgba(15,15,15,0.92);
 
 padding:40px;
 
-border-radius:18px;
-
 border:1px solid var(--border);
 
-transition:0.3s ease;
+border-radius:18px;
+
+transition:0.3s;
 
 }
 
@@ -424,23 +243,15 @@ transform:translateY(-10px);
 border-color:var(--orange);
 
 box-shadow:
-0 0 25px rgba(255,123,0,0.15);
-
-}
-
-.card i{
-
-font-size:2rem;
-
-color:var(--orange);
-
-margin-bottom:20px;
+0 0 25px rgba(255,123,0,0.2);
 
 }
 
 .card h3{
 
-margin-bottom:15px;
+margin-bottom:20px;
+
+color:var(--orange);
 
 }
 
@@ -448,155 +259,81 @@ margin-bottom:15px;
 
 line-height:1.8;
 
-color:var(--text-soft);
+color:var(--soft);
 
 }
 
-/* ===================================================== */
-/* TERMINAL */
-/* ===================================================== */
+/* FORM */
 
-.terminal{
-
-background:black;
-
-border:1px solid var(--orange);
-
-padding:35px;
-
-border-radius:15px;
-
-font-family:monospace;
-
-line-height:2;
-
-color:var(--orange);
-
-margin-top:50px;
-
-box-shadow:
-0 0 30px rgba(255,123,0,0.1);
-
-}
-
-/* ===================================================== */
-/* CONTACT */
-/* ===================================================== */
-
-.onboarding-grid{
+.contact-wrapper{
 
 display:grid;
 
-grid-template-columns:1fr 1.3fr;
+grid-template-columns:1fr 1.2fr;
 
 gap:40px;
 
-margin-top:60px;
+margin-top:50px;
 
 }
 
-.infrastructure-panel{
-
-display:flex;
-flex-direction:column;
-gap:25px;
-
-}
-
-.infra-card{
+.info-panel{
 
 background:
-linear-gradient(
-145deg,
-rgba(20,20,20,0.95),
-rgba(8,8,8,0.95));
+rgba(15,15,15,0.95);
 
-padding:30px;
+padding:40px;
 
-border-radius:18px;
+border-radius:20px;
 
 border:1px solid var(--border);
 
 }
 
-.infra-card h3{
+.info-panel h3{
+
+margin-bottom:25px;
 
 color:var(--orange);
 
-margin-bottom:20px;
+}
+
+.info-panel p{
+
+margin-bottom:18px;
+
+line-height:1.8;
+
+color:var(--soft);
 
 }
 
-.status-item{
-
-display:flex;
-align-items:center;
-gap:12px;
-
-margin-bottom:15px;
-
-color:var(--text-soft);
-
-}
-
-.status-dot{
-
-width:10px;
-height:10px;
-
-background:var(--orange);
-
-border-radius:50%;
-
-box-shadow:
-0 0 12px var(--orange);
-
-}
-
-.infra-card ul{
-
-list-style:none;
-
-line-height:2;
-
-color:var(--text-soft);
-
-}
-
-/* ===================================================== */
-/* FORM */
-/* ===================================================== */
-
-.contact-form{
+form{
 
 display:flex;
 flex-direction:column;
 gap:20px;
 
 background:
-linear-gradient(
-145deg,
-rgba(20,20,20,0.96),
-rgba(8,8,8,0.96));
+rgba(15,15,15,0.95);
 
 padding:40px;
 
-border-radius:18px;
+border-radius:20px;
 
 border:1px solid var(--border);
 
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select{
-
-background:
-rgba(15,15,15,0.95);
-
-border:1px solid rgba(255,255,255,0.08);
+input,
+textarea,
+select{
 
 padding:18px;
+
+background:#0b0b0b;
+
+border:1px solid rgba(255,255,255,0.08);
 
 color:white;
 
@@ -608,26 +345,52 @@ outline:none;
 
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus{
+input:focus,
+textarea:focus,
+select:focus{
 
 border-color:var(--orange);
 
 box-shadow:
-0 0 20px rgba(255,123,0,0.2);
+0 0 20px rgba(255,123,0,0.15);
 
 }
 
-.contact-form textarea{
+textarea{
 
 resize:vertical;
 
 }
 
-/* ===================================================== */
+button{
+
+padding:18px;
+
+background:transparent;
+
+border:1px solid var(--orange);
+
+color:var(--orange);
+
+cursor:pointer;
+
+font-size:1rem;
+
+transition:0.3s;
+
+}
+
+button:hover{
+
+background:var(--orange);
+
+color:black;
+
+box-shadow:0 0 25px var(--orange);
+
+}
+
 /* FOOTER */
-/* ===================================================== */
 
 footer{
 
@@ -641,27 +404,15 @@ margin-top:100px;
 
 }
 
-.contact-info{
+footer p{
 
-margin-top:25px;
+margin-top:15px;
 
-line-height:2;
-
-color:var(--text-soft);
+color:var(--soft);
 
 }
 
-.footer-note{
-
-margin-top:40px;
-
-color:#777;
-
-}
-
-/* ===================================================== */
 /* MOBILE */
-/* ===================================================== */
 
 @media(max-width:900px){
 
@@ -671,23 +422,15 @@ font-size:3rem;
 
 }
 
-.nav-links{
-
-flex-wrap:wrap;
-justify-content:center;
-
-}
-
-.onboarding-grid{
+.contact-wrapper{
 
 grid-template-columns:1fr;
 
 }
 
-.hero-buttons{
+.nav-links{
 
-flex-direction:column;
-align-items:center;
+display:none;
 
 }
 
@@ -699,10 +442,6 @@ align-items:center;
 
 <body>
 
-<div class="grid-overlay"></div>
-
-<!-- NAV -->
-
 <nav>
 
 <div class="logo">
@@ -713,19 +452,16 @@ BLACK <span>FYR3</span> SYSTEMS
 
 <a href="#about">About</a>
 <a href="#services">Systems</a>
-<a href="#agents">AI Agents</a>
 <a href="#contact">Contact</a>
 
 </div>
 
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
 
-<div class="status-pill">
-System Status: Operational
+<div class="status">
+SYSTEM STATUS: OPERATIONAL
 </div>
 
 <h1>
@@ -734,51 +470,18 @@ BLACK FYR3 SYSTEMS
 
 <p>
 
-Modern systems, AI infrastructure,
-automation engineering, operational software,
-deployment systems, and scalable digital infrastructure.
+Modern systems engineering,
+AI infrastructure,
+automation ecosystems,
+and scalable digital operations.
 
 </p>
-
-<div class="hero-buttons">
-
-<a href="#services" class="btn">
-Explore Systems
-</a>
 
 <a href="#contact" class="btn">
-Initialize Contact
+INITIALIZE REQUEST
 </a>
 
-</div>
-
-<div class="ember ember1"></div>
-<div class="ember ember2"></div>
-<div class="ember ember3"></div>
-
 </section>
-
-<!-- ABOUT -->
-
-<section id="about" class="section">
-
-<h2 class="section-title">
-Modern Systems & Digital Infrastructure
-</h2>
-
-<p class="about-text">
-
-BLACK FYR3 SYSTEMS develops scalable AI systems,
-automation infrastructure, intelligent operations,
-dashboard ecosystems, cloud deployment systems,
-and operational engineering for entrepreneurs,
-organizations, and communities.
-
-</p>
-
-</section>
-
-<!-- SERVICES -->
 
 <section id="services" class="section">
 
@@ -786,94 +489,47 @@ organizations, and communities.
 Operational Systems
 </h2>
 
-<div class="card-container">
+<div class="cards">
 
 <div class="card">
-
-<i class="fas fa-brain"></i>
 
 <h3>
 AI Infrastructure
 </h3>
 
 <p>
-AI agents, automation pipelines,
-local LLM systems, and intelligent workflows.
+Autonomous systems,
+AI agents,
+workflow automation,
+and operational intelligence.
 </p>
 
 </div>
 
 <div class="card">
 
-<i class="fas fa-server"></i>
-
 <h3>
-Digital Infrastructure
+Deployment Systems
 </h3>
 
 <p>
-Web systems, deployment architecture,
-portals, and scalable infrastructure engineering.
+Cloud deployment,
+web infrastructure,
+and scalable digital architecture.
 </p>
 
 </div>
 
 <div class="card">
 
-<i class="fas fa-chart-line"></i>
-
 <h3>
-Analytics Systems
+Automation Engineering
 </h3>
 
 <p>
-Operational dashboards,
-inventory systems, and real-time reporting infrastructure.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-gears"></i>
-
-<h3>
-Automation Systems
-</h3>
-
-<p>
-Workflow orchestration,
-business automation, and infrastructure optimization.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-network-wired"></i>
-
-<h3>
-Infrastructure Engineering
-</h3>
-
-<p>
-Scalable architecture,
-systems integration, and deployment engineering.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-layer-group"></i>
-
-<h3>
-System Integration
-</h3>
-
-<p>
-Connecting platforms,
-databases, AI systems, and operational infrastructure.
+Business automation,
+inventory systems,
+and dashboard ecosystems.
 </p>
 
 </div>
@@ -881,88 +537,6 @@ databases, AI systems, and operational infrastructure.
 </div>
 
 </section>
-
-<!-- AI AGENTS -->
-
-<section id="agents" class="section">
-
-<h2 class="section-title">
-AI Agent Network
-</h2>
-
-<div class="card-container">
-
-<div class="card">
-
-<i class="fas fa-robot"></i>
-
-<h3>
-Intake Agent
-</h3>
-
-<p>
-Handles onboarding,
-project intake, and infrastructure requests.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-box"></i>
-
-<h3>
-Inventory Agent
-</h3>
-
-<p>
-Tracks assets,
-inventory systems, and operational analytics.
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fas fa-globe"></i>
-
-<h3>
-Deployment Agent
-</h3>
-
-<p>
-Supports deployment,
-cloud infrastructure, and operational systems.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- TERMINAL -->
-
-<section class="section">
-
-<h2 class="section-title">
-BLACK FYR3 NODE STATUS
-</h2>
-
-<div class="terminal">
-
-<p>> Booting BLACK FYR3 infrastructure...</p>
-<p>> Initializing AI systems...</p>
-<p>> Connecting automation pipelines...</p>
-<p>> Infrastructure status: ONLINE</p>
-<p>> AI Runtime: ACTIVE</p>
-<p>> Deployment systems: READY</p>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
 
 <section id="contact" class="section">
 
@@ -970,100 +544,57 @@ BLACK FYR3 NODE STATUS
 Customer Onboarding Infrastructure
 </h2>
 
-<p class="about-text">
+<div class="contact-wrapper">
 
-Submit your infrastructure request,
-operational inquiry, or project onboarding request below.
+<div class="info-panel">
 
+<h3>
+BLACK FYR3 SYSTEMS
+</h3>
+
+<p>
+Founder: Jose Mendoza
 </p>
 
-<div class="onboarding-grid">
+<p>
+Mechanical Engineer
+</p>
 
-<!-- LEFT -->
+<p>
+Compton, California
+</p>
 
-<div class="infrastructure-panel">
+<p>
+Email:
+blackfyresytems@gmail.com
+</p>
 
-<div class="infra-card">
-
-<h3>
-Infrastructure Status
-</h3>
-
-<div class="status-item">
-<span class="status-dot"></span>
-AI Systems: ONLINE
-</div>
-
-<div class="status-item">
-<span class="status-dot"></span>
-Deployment Network: ACTIVE
-</div>
-
-<div class="status-item">
-<span class="status-dot"></span>
-Automation Systems: READY
-</div>
-
-<div class="status-item">
-<span class="status-dot"></span>
-Client Intake Systems: ACTIVE
-</div>
+<p>
+Infrastructure status:
+ONLINE
+</p>
 
 </div>
-
-<div class="infra-card">
-
-<h3>
-Operational Services
-</h3>
-
-<ul>
-
-<li>AI Infrastructure</li>
-<li>Automation Systems</li>
-<li>Dashboard Development</li>
-<li>Website Infrastructure</li>
-<li>Inventory Systems</li>
-<li>Cloud Deployment</li>
-<li>Operational Analytics</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<!-- FORM -->
 
 <form
 name="contact"
 method="POST"
 data-netlify="true"
 netlify-honeypot="bot-field"
-action="/success.html"
-class="contact-form">
+action="/success.html">
 
-<input
-type="hidden"
+<input type="hidden"
 name="form-name"
 value="contact">
 
 <p hidden>
 
 <label>
-
 Don’t fill this out:
-
 <input name="bot-field">
-
 </label>
 
 </p>
-
-<input
-type="hidden"
-name="date"
-id="currentDate">
 
 <input
 type="text"
@@ -1083,16 +614,10 @@ name="email"
 placeholder="Email Address"
 required>
 
-<select
-name="project-type"
-required>
-
-<option value="">
-Select Project Type
-</option>
+<select name="service">
 
 <option>
-Website Development
+Select Service
 </option>
 
 <option>
@@ -1100,7 +625,7 @@ AI Infrastructure
 </option>
 
 <option>
-Dashboard Systems
+Website Infrastructure
 </option>
 
 <option>
@@ -1108,23 +633,7 @@ Automation Systems
 </option>
 
 <option>
-Infrastructure Consulting
-</option>
-
-</select>
-
-<select name="priority">
-
-<option>
-Standard Request
-</option>
-
-<option>
-High Priority
-</option>
-
-<option>
-Emergency Support
+Operational Dashboards
 </option>
 
 </select>
@@ -1132,14 +641,12 @@ Emergency Support
 <textarea
 name="message"
 rows="6"
-placeholder="Describe your project or operational request..."
+placeholder="Describe your project request..."
 required></textarea>
 
-<button
-type="submit"
-class="btn">
+<button type="submit">
 
-Initialize Request
+SEND REQUEST
 
 </button>
 
@@ -1148,8 +655,6 @@ Initialize Request
 </div>
 
 </section>
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1161,45 +666,11 @@ BLACK FYR3 SYSTEMS
 Modern Systems & Digital Infrastructure
 </p>
 
-<div class="contact-info">
-
 <p>
-Founder: Jose Mendoza
-</p>
-
-<p>
-Mechanical Engineer
-</p>
-
-<p>
-Compton, California
-</p>
-
-<p>
-blackfyresytems@gmail.com
-</p>
-
-</div>
-
-<p class="footer-note">
-
-Engineered using scalable infrastructure,
-AI systems, and operational architecture.
-
+Engineered by Jose Mendoza
 </p>
 
 </footer>
-
-<!-- SCRIPT -->
-
-<script>
-
-const today = new Date();
-
-document.getElementById("currentDate").value =
-today.toLocaleString();
-
-</script>
 
 </body>
 
