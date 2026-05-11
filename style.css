@@ -24,6 +24,8 @@ line-height:1.6;
 
 overflow-x:hidden;
 
+cursor:none;
+
 }
 
 /* BACKGROUND MOTION */
@@ -102,6 +104,37 @@ transparent 40%
 );
 
 pointer-events:none;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(circle at center,
+rgba(255,123,0,0.05),
+transparent 60%);
+
+animation:pulseHero 6s infinite alternate;
+
+pointer-events:none;
+
+}
+
+@keyframes pulseHero{
+
+0%{
+opacity:0.4;
+}
+
+100%{
+opacity:1;
+}
 
 }
 
@@ -382,6 +415,9 @@ border-color:rgba(255,123,0,0.5);
 
 transform:translateY(-5px);
 
+box-shadow:
+0 0 20px rgba(255,123,0,0.15);
+
 }
 
 .status-box h3{
@@ -399,6 +435,8 @@ color:#ff7b00;
 font-weight:700;
 
 letter-spacing:1px;
+
+transition:0.3s;
 
 }
 
@@ -719,6 +757,9 @@ border-color:#ff7b00;
 
 transform:translateY(-5px);
 
+box-shadow:
+0 0 20px rgba(255,123,0,0.2);
+
 }
 
 .flow-line{
@@ -810,7 +851,8 @@ border-radius:24px;
 overflow:hidden;
 
 box-shadow:
-0 0 40px rgba(255,123,0,0.08);
+0 0 40px rgba(255,123,0,0.08),
+0 0 80px rgba(255,123,0,0.05);
 
 }
 
@@ -1021,6 +1063,121 @@ color:#71717a;
 
 }
 
+/* REVEALS */
+
+.division-card,
+.agent-card,
+.metric-card,
+.status-box,
+.flow-box,
+.mission-card{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:
+opacity 0.8s ease,
+transform 0.8s ease;
+
+}
+
+.reveal-active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* CURSOR */
+
+.custom-cursor{
+
+position:fixed;
+
+width:22px;
+height:22px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+rgba(255,123,0,0.9),
+rgba(255,123,0,0.2));
+
+pointer-events:none;
+
+transform:
+translate(-50%,-50%);
+
+z-index:9999;
+
+mix-blend-mode:screen;
+
+box-shadow:
+0 0 25px rgba(255,123,0,0.8);
+
+}
+
+/* EMBERS */
+
+.dynamic-ember{
+
+position:fixed;
+
+bottom:-20px;
+
+width:10px;
+height:10px;
+
+background:#ff7b00;
+
+border-radius:50%;
+
+pointer-events:none;
+
+filter:blur(2px);
+
+box-shadow:
+0 0 18px rgba(255,123,0,0.8);
+
+animation:floatDynamic linear forwards;
+
+z-index:-1;
+
+}
+
+@keyframes floatDynamic{
+
+0%{
+
+transform:
+translateY(0)
+translateX(0);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+translateX(60px);
+
+opacity:0;
+
+}
+
+}
+
 /* MOBILE */
 
 @media(max-width:1000px){
@@ -1041,6 +1198,18 @@ font-size:4rem;
 }
 
 @media(max-width:700px){
+
+body{
+
+cursor:auto;
+
+}
+
+.custom-cursor{
+
+display:none;
+
+}
 
 .nav-links{
 
