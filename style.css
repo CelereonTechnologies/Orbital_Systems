@@ -1,6 +1,413 @@
-/* ========================================= */
-/* CUSTOMER ONBOARDING INFRASTRUCTURE */
-/* ========================================= */
+:root {
+
+    --bg-dark: #050505;
+    --orange-glow: #ff7b00;
+    --border: rgba(255,123,0,0.2);
+    --text-soft: #b6b6b6;
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    background:
+    radial-gradient(circle at center,
+    #1b0f00 0%,
+    #050505 100%);
+
+    color: white;
+
+    font-family: 'Inter', sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+/* GRID */
+
+.grid-overlay {
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    background-image:
+    linear-gradient(rgba(255,123,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,123,0,0.04) 1px, transparent 1px);
+
+    background-size: 50px 50px;
+
+    opacity: 0.12;
+
+    z-index: -2;
+
+}
+
+/* NAV */
+
+nav {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 5%;
+
+    position: fixed;
+
+    width: 100%;
+
+    background: rgba(5,5,5,0.8);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 1000;
+
+}
+
+.logo {
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+}
+
+.logo span {
+
+    color: var(--orange-glow);
+
+    text-shadow:
+    0 0 15px var(--orange-glow);
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+.nav-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+}
+
+.nav-links a:hover {
+
+    color: var(--orange-glow);
+
+}
+
+/* HERO */
+
+.hero {
+
+    padding: 220px 20px 150px;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.status-pill {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border: 1px solid var(--orange-glow);
+
+    border-radius: 30px;
+
+    color: var(--orange-glow);
+
+    margin-bottom: 30px;
+
+}
+
+.hero h1 {
+
+    font-size: 5rem;
+
+    margin-bottom: 25px;
+
+}
+
+.hero p {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+
+}
+
+/* BUTTONS */
+
+.hero-buttons {
+
+    margin-top: 40px;
+
+}
+
+.btn {
+
+    display: inline-block;
+
+    padding: 18px 38px;
+
+    border: 1px solid var(--orange-glow);
+
+    color: var(--orange-glow);
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+
+    background: transparent;
+
+}
+
+.btn:hover {
+
+    background: var(--orange-glow);
+
+    color: black;
+
+    box-shadow:
+    0 0 25px var(--orange-glow);
+
+}
+
+.secondary-btn {
+
+    margin-left: 20px;
+
+}
+
+/* EMBERS */
+
+.ember {
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    background: var(--orange-glow);
+
+    border-radius: 50%;
+
+    filter: blur(3px);
+
+    animation: floatEmber 6s infinite ease-in-out;
+
+}
+
+.ember-1 {
+
+    left: 20%;
+    top: 70%;
+
+}
+
+.ember-2 {
+
+    left: 60%;
+    top: 60%;
+
+    animation-delay: 2s;
+
+}
+
+.ember-3 {
+
+    left: 80%;
+    top: 75%;
+
+    animation-delay: 4s;
+
+}
+
+@keyframes floatEmber {
+
+    0% {
+
+        transform: translateY(0);
+
+        opacity: 0;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform: translateY(-120px);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* SECTION */
+
+.section {
+
+    padding: 100px 10%;
+
+}
+
+.section-title {
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    margin-bottom: 25px;
+
+}
+
+.about-text {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+
+}
+
+/* CARDS */
+
+.card-container {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+
+    margin-top: 60px;
+
+}
+
+.card {
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(20,20,20,0.95),
+    rgba(10,10,10,0.95));
+
+    border: 1px solid var(--border);
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    transition: 0.3s ease;
+
+}
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: var(--orange-glow);
+
+    box-shadow:
+    0 0 25px rgba(255,123,0,0.15);
+
+}
+
+.card i {
+
+    font-size: 2rem;
+
+    color: var(--orange-glow);
+
+    margin-bottom: 20px;
+
+}
+
+.card h3 {
+
+    margin-bottom: 15px;
+
+}
+
+.card p {
+
+    color: var(--text-soft);
+
+    line-height: 1.7;
+
+}
+
+/* TERMINAL */
+
+.terminal {
+
+    background: black;
+
+    border: 1px solid var(--orange-glow);
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    font-family: monospace;
+
+    color: var(--orange-glow);
+
+    line-height: 2;
+
+}
+
+/* ONBOARDING */
 
 .onboarding-grid {
 
@@ -14,10 +421,6 @@
     margin-top: 60px;
 
 }
-
-/* ========================================= */
-/* LEFT PANEL */
-/* ========================================= */
 
 .infrastructure-panel {
 
@@ -43,20 +446,6 @@
 
     border-radius: 16px;
 
-    box-shadow:
-    0 0 20px rgba(255,123,0,0.05);
-
-    transition: 0.3s ease;
-
-}
-
-.infra-card:hover {
-
-    border-color: var(--orange-glow);
-
-    box-shadow:
-    0 0 25px rgba(255,123,0,0.15);
-
 }
 
 .infra-card h3 {
@@ -65,13 +454,7 @@
 
     margin-bottom: 20px;
 
-    font-size: 1.2rem;
-
 }
-
-/* ========================================= */
-/* STATUS ITEMS */
-/* ========================================= */
 
 .status-item {
 
@@ -82,8 +465,6 @@
     gap: 12px;
 
     margin-bottom: 15px;
-
-    color: var(--text-soft);
 
 }
 
@@ -99,35 +480,7 @@
     box-shadow:
     0 0 12px var(--orange-glow);
 
-    animation: pulseDot 2s infinite;
-
 }
-
-@keyframes pulseDot {
-
-    0% {
-
-        transform: scale(1);
-
-    }
-
-    50% {
-
-        transform: scale(1.4);
-
-    }
-
-    100% {
-
-        transform: scale(1);
-
-    }
-
-}
-
-/* ========================================= */
-/* SERVICES */
-/* ========================================= */
 
 .infra-card ul {
 
@@ -139,18 +492,7 @@
 
 }
 
-.infra-card li {
-
-    border-bottom:
-    1px solid rgba(255,255,255,0.05);
-
-    padding: 6px 0;
-
-}
-
-/* ========================================= */
-/* CONTACT FORM */
-/* ========================================= */
+/* FORM */
 
 .contact-form {
 
@@ -172,14 +514,7 @@
 
     border: 1px solid var(--border);
 
-    box-shadow:
-    0 0 30px rgba(255,123,0,0.08);
-
 }
-
-/* ========================================= */
-/* INPUTS */
-/* ========================================= */
 
 .contact-form input,
 .contact-form textarea,
@@ -200,15 +535,7 @@
 
     outline: none;
 
-    transition: 0.3s ease;
-
-    font-family: 'Inter', sans-serif;
-
 }
-
-/* ========================================= */
-/* INPUT FOCUS */
-/* ========================================= */
 
 .contact-form input:focus,
 .contact-form textarea:focus,
@@ -221,68 +548,91 @@
 
 }
 
-/* ========================================= */
-/* TEXTAREA */
-/* ========================================= */
-
 .contact-form textarea {
 
     resize: vertical;
 
-    min-height: 160px;
+}
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    border-top: 1px solid var(--border);
+
+    margin-top: 100px;
 
 }
 
-/* ========================================= */
-/* SELECT DROPDOWN */
-/* ========================================= */
+.contact-info {
 
-.contact-form select {
+    margin-top: 25px;
 
-    cursor: pointer;
+    line-height: 2;
 
-}
-
-/* ========================================= */
-/* BUTTON */
-/* ========================================= */
-
-.contact-form button {
-
-    background: transparent;
-
-    cursor: pointer;
-
-    margin-top: 10px;
+    color: var(--text-soft);
 
 }
 
-/* ========================================= */
-/* PLACEHOLDER */
-/* ========================================= */
+.footer-note {
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
+    margin-top: 40px;
 
-    color: rgba(255,255,255,0.4);
+    color: #777;
 
 }
 
-/* ========================================= */
 /* MOBILE */
-/* ========================================= */
 
 @media(max-width:900px) {
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+    .nav-links {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+    .hero h1 {
+
+        font-size: 2.8rem;
+
+    }
+
+    .hero-buttons {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 20px;
+
+    }
+
+    .secondary-btn {
+
+        margin-left: 0;
+
+    }
 
     .onboarding-grid {
 
         grid-template-columns: 1fr;
-
-    }
-
-    .contact-form {
-
-        padding: 25px;
 
     }
 
