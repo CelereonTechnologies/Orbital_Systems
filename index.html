@@ -1,294 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- CUSTOMER ONBOARDING INFRASTRUCTURE -->
 
-<head>
+<section id="contact" class="section">
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <h2 class="section-title">
+        Customer Onboarding Infrastructure
+    </h2>
 
-    <title>BLACK FYR3 SYSTEMS | Modern Systems & Digital Infrastructure</title>
+    <p class="about-text">
+        Initialize your project request, infrastructure inquiry,
+        automation system, or operational support request below.
+    </p>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <div class="onboarding-grid">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- LEFT PANEL -->
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+        <div class="infrastructure-panel">
 
-</head>
+            <!-- STATUS -->
 
-<body>
+            <div class="infra-card">
 
-    <!-- GRID -->
-    <div class="grid-overlay"></div>
+                <h3>Infrastructure Status</h3>
 
-    <!-- NAVIGATION -->
-    <nav>
+                <div class="status-item">
+                    <span class="status-dot"></span>
+                    AI Systems: ONLINE
+                </div>
 
-        <div class="logo">
-            BLACK <span>FYR3</span> SYSTEMS
-        </div>
+                <div class="status-item">
+                    <span class="status-dot"></span>
+                    Deployment Network: ACTIVE
+                </div>
 
-        <div class="nav-links">
+                <div class="status-item">
+                    <span class="status-dot"></span>
+                    Automation Systems: READY
+                </div>
 
-            <a href="#about">Infrastructure</a>
-            <a href="#services">Systems</a>
-            <a href="#agents">AI Agents</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#contact" class="nav-btn">Connect</a>
+                <div class="status-item">
+                    <span class="status-dot"></span>
+                    Client Intake Systems: ACTIVE
+                </div>
 
-        </div>
+            </div>
 
-    </nav>
+            <!-- SERVICES -->
 
-    <!-- HERO -->
-    <section class="hero">
+            <div class="infra-card">
 
-        <div class="status-pill">
-            System Status: Operational
-        </div>
+                <h3>Operational Services</h3>
 
-        <h1>BLACK FYR3 SYSTEMS</h1>
+                <ul>
 
-        <p>
-            Engineering modern systems, AI infrastructure,
-            automation platforms, and scalable digital ecosystems
-            for organizations, entrepreneurs, and communities.
-        </p>
+                    <li>AI Infrastructure</li>
+                    <li>Automation Systems</li>
+                    <li>Dashboard Development</li>
+                    <li>Website Infrastructure</li>
+                    <li>Inventory Systems</li>
+                    <li>Operational Analytics</li>
+                    <li>Cloud Deployment</li>
+                    <li>Digital Infrastructure</li>
 
-        <div class="hero-buttons">
+                </ul>
 
-            <a href="#about" class="btn">
-                Explore Infrastructure
-            </a>
+            </div>
 
-            <a href="#contact" class="btn secondary-btn">
-                Initialize Contact
-            </a>
+            <!-- RESPONSE TIME -->
 
-        </div>
+            <div class="infra-card">
 
-        <div class="ember ember-1"></div>
-        <div class="ember ember-2"></div>
-        <div class="ember ember-3"></div>
+                <h3>Average Response Time</h3>
 
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-
-        <h2 class="section-title">
-            Modern Systems & Digital Infrastructure
-        </h2>
-
-        <p class="about-text">
-            BLACK FYR3 SYSTEMS develops scalable AI infrastructure,
-            operational systems, automation workflows, digital platforms,
-            and intelligent technologies designed to modernize organizations
-            and communities through affordable engineering solutions.
-        </p>
-
-    </section>
-
-    <!-- SYSTEMS -->
-    <section id="services" class="section">
-
-        <h2 class="section-title">
-            Operational Systems
-        </h2>
-
-        <div class="card-container">
-
-            <div class="card">
-                <i class="fas fa-brain"></i>
-                <h3>AI Infrastructure</h3>
                 <p>
-                    AI agents, local LLM systems,
-                    automation pipelines, and intelligent operations.
+                    24–48 Hours
                 </p>
-            </div>
 
-            <div class="card">
-                <i class="fas fa-server"></i>
-                <h3>Digital Infrastructure</h3>
-                <p>
-                    Websites, portals, cloud systems,
-                    deployment pipelines, and operational architecture.
-                </p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Systems</h3>
-                <p>
-                    Dashboards, analytics, operational metrics,
-                    and intelligent reporting systems.
-                </p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-gears"></i>
-                <h3>Automation</h3>
-                <p>
-                    Workflow orchestration, integrations,
-                    AI routing systems, and process automation.
-                </p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-network-wired"></i>
-                <h3>Infrastructure Engineering</h3>
-                <p>
-                    Scalable infrastructure planning,
-                    operational architecture, and deployment engineering.
-                </p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-layer-group"></i>
-                <h3>System Integration</h3>
-                <p>
-                    Connecting platforms, databases,
-                    operational systems, and AI ecosystems together.
-                </p>
             </div>
 
         </div>
 
-    </section>
+        <!-- FORM -->
 
-    <!-- AGENTS -->
-    <section id="agents" class="section">
+        <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            class="contact-form">
 
-        <h2 class="section-title">
-            AI Agent Network
-        </h2>
+            <!-- NETLIFY -->
 
-        <div class="card-container">
+            <input type="hidden" name="form-name" value="contact">
 
-            <div class="card">
-                <i class="fas fa-robot"></i>
-                <h3>Intake Agent</h3>
-                <p>
-                    Handles onboarding, routing,
-                    customer intake, and operational organization.
-                </p>
-            </div>
+            <!-- DATE -->
 
-            <div class="card">
-                <i class="fas fa-box"></i>
-                <h3>Inventory Agent</h3>
-                <p>
-                    Tracks inventory, analytics,
-                    logistics systems, and operational assets.
-                </p>
-            </div>
+            <input
+                type="hidden"
+                name="date"
+                id="currentDate">
 
-            <div class="card">
-                <i class="fas fa-globe"></i>
-                <h3>Web Systems Agent</h3>
-                <p>
-                    Supports websites, deployment workflows,
-                    portals, and operational interfaces.
-                </p>
-            </div>
+            <!-- NAME -->
 
-        </div>
+            <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required>
 
-    </section>
+            <!-- PHONE -->
 
-    <!-- TERMINAL -->
-    <section class="section">
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                required>
 
-        <h2 class="section-title">
-            BLACK FYR3 NODE STATUS
-        </h2>
+            <!-- EMAIL -->
 
-        <div class="terminal">
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required>
 
-            <p>> Booting BLACK FYR3 infrastructure...</p>
-            <p>> Initializing AI systems...</p>
-            <p>> Connecting operational pipelines...</p>
-            <p>> Loading infrastructure modules...</p>
-            <p>> Local AI Runtime: ACTIVE</p>
-            <p>> Deployment Network: ONLINE</p>
-            <p>> System Status: OPERATIONAL</p>
+            <!-- PROJECT -->
 
-        </div>
+            <select name="project-type" required>
 
-    </section>
+                <option value="">
+                    Select Project Type
+                </option>
 
-    <!-- ROADMAP -->
-    <section id="roadmap" class="section">
+                <option>
+                    Website Development
+                </option>
 
-        <h2 class="section-title">
-            Development Roadmap
-        </h2>
+                <option>
+                    AI Infrastructure
+                </option>
 
-        <div class="roadmap">
+                <option>
+                    Dashboard Systems
+                </option>
 
-            <div class="roadmap-item">
-                <h3>Phase 1</h3>
-                <p>Infrastructure & Deployment</p>
-            </div>
+                <option>
+                    Automation Systems
+                </option>
 
-            <div class="roadmap-item">
-                <h3>Phase 2</h3>
-                <p>AI Systems & Automation</p>
-            </div>
+                <option>
+                    Inventory Systems
+                </option>
 
-            <div class="roadmap-item">
-                <h3>Phase 3</h3>
-                <p>Operational Dashboards</p>
-            </div>
+                <option>
+                    Infrastructure Consulting
+                </option>
 
-            <div class="roadmap-item">
-                <h3>Phase 4</h3>
-                <p>Infrastructure Ecosystem Expansion</p>
-            </div>
+                <option>
+                    Other
+                </option>
 
-        </div>
+            </select>
 
-    </section>
+            <!-- PRIORITY -->
 
-    <!-- FOOTER -->
-    <footer id="contact">
+            <select name="priority">
 
-        <h2>BLACK FYR3 SYSTEMS</h2>
+                <option>
+                    Standard Request
+                </option>
 
-        <p>
-            Modern Systems & Digital Infrastructure
-        </p>
+                <option>
+                    High Priority
+                </option>
 
-        <div class="contact-info">
+                <option>
+                    Emergency Support
+                </option>
 
-            <p><strong>Founder:</strong> Jose Mendoza</p>
+            </select>
 
-            <p>Mechanical Engineer</p>
+            <!-- BUDGET -->
 
-            <p>707 N Alameda St, Compton CA 90220</p>
+            <select name="budget">
 
-            <p>(310) 667-2849</p>
+                <option value="">
+                    Estimated Budget
+                </option>
 
-        </div>
+                <option>
+                    Under $500
+                </option>
 
-        <div class="footer-buttons">
+                <option>
+                    $500 - $2,000
+                </option>
 
-            <a href="tel:13106672849" class="btn">
-                Initialize Contact
-            </a>
+                <option>
+                    $2,000 - $5,000
+                </option>
 
-        </div>
+                <option>
+                    $5,000+
+                </option>
 
-        <p class="footer-note">
-            Engineered using scalable infrastructure,
-            automation systems, and intelligent operational design.
-        </p>
+            </select>
 
-    </footer>
+            <!-- MESSAGE -->
 
-</body>
+            <textarea
+                name="message"
+                rows="6"
+                placeholder="Describe your project, operational issue, or infrastructure request..."
+                required></textarea>
 
-</html>
+            <!-- BUTTON -->
+
+            <button type="submit" class="btn">
+                Initialize Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- DATE SCRIPT -->
+
+<script>
+
+    const today = new Date();
+
+    document.getElementById("currentDate").value =
+    today.toLocaleString();
+
+</script>
