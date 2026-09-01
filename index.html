@@ -1,107 +1,1098 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>BLACK FYR3 SYSTEMS | AI, Engineering & Digital Infrastructure</title>
 
-<title>
-BLACK FYR3 SYSTEMS | AI Infrastructure & Digital Ecosystems
-</title>
+<meta name="description" content="BLACK FYR3 SYSTEMS builds practical AI, automation, websites, dashboards, data systems, and community technology solutions for businesses and organizations.">
+<meta name="keywords" content="Blackfyre Systems, BLACK FYR3, AI systems, automation, technology consulting, dashboards, data systems, websites, community technology, Compton technology">
+<meta name="author" content="BLACK FYR3 SYSTEMS">
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<meta property="og:title" content="BLACK FYR3 SYSTEMS">
+<meta property="og:description" content="AI. Engineering. Digital Infrastructure. Practical technology for businesses and communities.">
+<meta property="og:type" content="website">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
 
-<link rel="stylesheet"
-href="style.css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#050505;
+color:white;
+line-height:1.6;
+overflow-x:hidden;
+cursor:none;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:140%;
+height:140%;
+top:-20%;
+left:-20%;
+background:
+radial-gradient(circle,
+rgba(255,123,0,0.05),
+transparent 60%);
+animation:backgroundMove 12s infinite alternate ease-in-out;
+pointer-events:none;
+z-index:-3;
+}
+
+@keyframes backgroundMove{
+0%{transform:translate(0,0);}
+100%{transform:translate(60px,40px);}
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+position:relative;
+overflow:hidden;
+border-bottom:1px solid #27272a;
+background:
+radial-gradient(circle at top left,
+rgba(255,115,0,0.18),
+transparent 40%),
+radial-gradient(circle at bottom right,
+rgba(255,85,0,0.12),
+transparent 40%),
+#050505;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+135deg,
+rgba(255,115,0,0.08),
+transparent 40%);
+pointer-events:none;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at center,
+rgba(255,123,0,0.05),
+transparent 60%);
+animation:pulseHero 6s infinite alternate;
+pointer-events:none;
+}
+
+@keyframes pulseHero{
+0%{opacity:.4;}
+100%{opacity:1;}
+}
+
+nav{
+position:relative;
+z-index:100;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 7%;
+border-bottom:1px solid rgba(255,255,255,.05);
+background:rgba(5,5,5,.65);
+backdrop-filter:blur(15px);
+}
+
+.logo{
+font-size:1.35rem;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.logo span{
+color:#ff7b00;
+text-shadow:0 0 18px rgba(255,123,0,.7);
+}
+
+.nav-links{
+display:flex;
+gap:28px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#d4d4d8;
+font-size:.9rem;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#ff7b00;
+}
+
+.hero-content{
+position:relative;
+z-index:10;
+max-width:1300px;
+margin:auto;
+padding:125px 7% 145px;
+}
+
+.hero-pill{
+display:inline-flex;
+padding:10px 18px;
+border-radius:999px;
+border:1px solid rgba(255,123,0,.3);
+background:rgba(255,123,0,.08);
+color:#ffb36b;
+font-size:.85rem;
+margin-bottom:28px;
+backdrop-filter:blur(10px);
+}
+
+.hero h1{
+font-size:clamp(3.3rem,7vw,6.5rem);
+font-weight:900;
+line-height:1;
+max-width:1100px;
+letter-spacing:-3px;
+}
+
+.hero h1 span{
+display:block;
+background:
+linear-gradient(
+90deg,
+#ff7b00,
+#ffb347);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:32px;
+max-width:780px;
+font-size:1.15rem;
+line-height:1.9;
+color:#a1a1aa;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:15px 28px;
+border-radius:16px;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+}
+
+.primary-btn{
+background:#ff7b00;
+color:#050505;
+}
+
+.primary-btn:hover{
+background:#ff9d42;
+transform:translateY(-3px);
+box-shadow:0 0 30px rgba(255,123,0,.3);
+}
+
+.secondary-btn{
+border:1px solid #3f3f46;
+color:white;
+background:rgba(255,255,255,.03);
+}
+
+.secondary-btn:hover{
+border-color:#ff7b00;
+color:#ff7b00;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+padding:90px 7%;
+background:#080808;
+border-bottom:1px solid #27272a;
+}
+
+.intro-grid{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.intro h2{
+font-size:clamp(2.2rem,4vw,3.6rem);
+line-height:1.15;
+margin-bottom:25px;
+}
+
+.intro h2 span{
+color:#ff7b00;
+}
+
+.intro p{
+color:#a1a1aa;
+font-size:1.05rem;
+line-height:1.9;
+}
+
+.intro-card{
+background:#0f0f10;
+border:1px solid #27272a;
+border-radius:28px;
+padding:35px;
+box-shadow:0 0 40px rgba(255,123,0,.07);
+}
+
+.intro-card h3{
+color:#ff7b00;
+margin-bottom:20px;
+font-size:1.5rem;
+}
+
+.intro-card p{
+font-size:.95rem;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.section{
+padding:110px 7%;
+}
+
+.dark-section{
+padding:110px 7%;
+background:#0a0a0a;
+border-top:1px solid #27272a;
+border-bottom:1px solid #27272a;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+.section-header{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-header h2{
+font-size:clamp(2.2rem,4vw,3.2rem);
+font-weight:900;
+margin-bottom:15px;
+}
+
+.section-header h2 span{
+color:#ff7b00;
+}
+
+.section-header p{
+max-width:750px;
+margin:auto;
+color:#a1a1aa;
+font-size:1.05rem;
+}
+
+/* =========================
+   PROBLEM / SOLUTION
+========================= */
+
+.problem-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+}
+
+.problem-card{
+background:#0f0f10;
+border:1px solid #27272a;
+border-radius:24px;
+padding:32px;
+transition:.3s;
+}
+
+.problem-card:hover{
+transform:translateY(-6px);
+border-color:rgba(255,123,0,.5);
+box-shadow:0 0 25px rgba(255,123,0,.1);
+}
+
+.problem-card .number{
+font-size:.8rem;
+color:#ff7b00;
+font-weight:800;
+letter-spacing:2px;
+margin-bottom:18px;
+}
+
+.problem-card h3{
+font-size:1.35rem;
+margin-bottom:12px;
+}
+
+.problem-card p{
+color:#a1a1aa;
+line-height:1.8;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
+}
+
+.service-card{
+background:#050505;
+border:1px solid #27272a;
+border-radius:26px;
+padding:35px;
+transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.service-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:2px;
+background:linear-gradient(90deg,transparent,#ff7b00,transparent);
+opacity:0;
+transition:.3s;
+}
+
+.service-card:hover{
+transform:translateY(-7px);
+border-color:rgba(255,123,0,.5);
+box-shadow:0 0 30px rgba(255,123,0,.12);
+}
+
+.service-card:hover::before{
+opacity:1;
+}
+
+.service-number{
+color:#ff7b00;
+font-weight:800;
+font-size:.75rem;
+letter-spacing:2px;
+margin-bottom:20px;
+}
+
+.service-card h3{
+font-size:1.45rem;
+margin-bottom:14px;
+}
+
+.service-card p{
+color:#a1a1aa;
+line-height:1.8;
+}
+
+.service-card ul{
+margin-top:20px;
+padding-left:20px;
+color:#d4d4d8;
+}
+
+.service-card li{
+margin-bottom:8px;
+}
+
+/* =========================
+   DIVISIONS
+========================= */
+
+.division-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+}
+
+.division-card{
+background:#050505;
+border:1px solid #27272a;
+padding:34px;
+border-radius:28px;
+transition:.3s;
+}
+
+.division-card:hover{
+border-color:rgba(255,123,0,.5);
+transform:translateY(-6px);
+}
+
+.division-card h3{
+font-size:1.5rem;
+margin-bottom:16px;
+color:#ff7b00;
+}
+
+.division-card p{
+color:#a1a1aa;
+line-height:1.8;
+}
+
+.division-card .tag{
+display:inline-block;
+margin-top:20px;
+padding:6px 10px;
+border:1px solid rgba(255,123,0,.25);
+border-radius:20px;
+font-size:.7rem;
+color:#ffb36b;
+}
+
+/* =========================
+   FLOW
+========================= */
+
+.flow-section{
+padding:120px 7%;
+background:#080808;
+border-top:1px solid #27272a;
+border-bottom:1px solid #27272a;
+}
+
+.flow-grid{
+display:flex;
+align-items:center;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+margin-top:60px;
+}
+
+.flow-box{
+padding:22px 30px;
+background:#111111;
+border:1px solid #27272a;
+border-radius:18px;
+font-weight:700;
+color:#ffb36b;
+transition:.3s;
+}
+
+.flow-box:hover{
+border-color:#ff7b00;
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(255,123,0,.2);
+}
+
+.flow-line{
+width:45px;
+height:2px;
+background:
+linear-gradient(
+90deg,
+transparent,
+#ff7b00,
+transparent);
+}
+
+/* =========================
+   AGENTS
+========================= */
+
+.agents-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+gap:24px;
+}
+
+.agent-card{
+background:#0f0f10;
+border:1px solid #27272a;
+border-radius:24px;
+padding:32px;
+transition:.3s;
+}
+
+.agent-card:hover{
+border-color:rgba(255,123,0,.5);
+transform:translateY(-5px);
+}
+
+.agent-code{
+font-family:monospace;
+color:#ff7b00;
+font-size:.75rem;
+margin-bottom:15px;
+}
+
+.agent-card h3{
+font-size:1.25rem;
+margin-bottom:14px;
+color:#ffb36b;
+}
+
+.agent-card p{
+color:#a1a1aa;
+line-height:1.8;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:#0f0f10;
+border:1px solid #27272a;
+border-radius:28px;
+padding:38px;
+position:relative;
+overflow:hidden;
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-7px);
+border-color:rgba(255,123,0,.55);
+box-shadow:0 0 35px rgba(255,123,0,.12);
+}
+
+.project-status{
+display:inline-block;
+padding:6px 12px;
+border-radius:20px;
+border:1px solid rgba(255,123,0,.25);
+color:#ffb36b;
+font-size:.7rem;
+margin-bottom:22px;
+}
+
+.project-card h3{
+font-size:1.7rem;
+margin-bottom:15px;
+}
+
+.project-card p{
+color:#a1a1aa;
+line-height:1.8;
+}
+
+.project-link{
+display:inline-block;
+margin-top:25px;
+color:#ff7b00;
+text-decoration:none;
+font-weight:700;
+}
+
+.project-link:hover{
+color:#ffb347;
+}
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community{
+background:
+radial-gradient(circle at center,
+rgba(255,123,0,.08),
+transparent 55%),
+#080808;
+}
+
+.community-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.community h2{
+font-size:clamp(2.3rem,4vw,3.5rem);
+line-height:1.15;
+margin-bottom:20px;
+}
+
+.community h2 span{
+color:#ff7b00;
+}
+
+.community p{
+color:#a1a1aa;
+line-height:1.9;
+}
+
+.community-list{
+display:grid;
+gap:14px;
+margin-top:28px;
+}
+
+.community-item{
+padding:18px 20px;
+border:1px solid #27272a;
+background:#0f0f10;
+border-radius:15px;
+color:#d4d4d8;
+}
+
+.community-item span{
+color:#ff7b00;
+margin-right:10px;
+}
+
+/* =========================
+   TECHNOLOGY
+========================= */
+
+.stack-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.stack-grid h2{
+font-size:3rem;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.stack-grid p{
+color:#a1a1aa;
+font-size:1.05rem;
+line-height:1.9;
+}
+
+.stack-boxes{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.stack-box{
+padding:26px;
+border-radius:22px;
+background:#050505;
+border:1px solid #27272a;
+text-align:center;
+font-weight:700;
+color:#ffb36b;
+transition:.3s;
+}
+
+.stack-box:hover{
+border-color:rgba(255,123,0,.5);
+transform:translateY(-4px);
+}
+
+/* =========================
+   METRICS
+========================= */
+
+.metrics-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:24px;
+}
+
+.metric-card{
+background:#0f0f10;
+border:1px solid #27272a;
+padding:38px;
+border-radius:24px;
+text-align:center;
+transition:.3s;
+}
+
+.metric-card:hover{
+border-color:rgba(255,123,0,.5);
+transform:translateY(-6px);
+}
+
+.metric-card h2{
+font-size:2.6rem;
+color:#ff7b00;
+margin-bottom:10px;
+}
+
+.metric-card p{
+color:#a1a1aa;
+}
+
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal-section{
+padding:120px 7%;
+}
+
+.terminal-window{
+max-width:1100px;
+margin:auto;
+background:#050505;
+border:1px solid #27272a;
+border-radius:24px;
+overflow:hidden;
+box-shadow:
+0 0 40px rgba(255,123,0,.08),
+0 0 80px rgba(255,123,0,.05);
+}
+
+.terminal-top{
+display:flex;
+align-items:center;
+gap:10px;
+padding:18px 24px;
+background:#111111;
+border-bottom:1px solid #27272a;
+}
+
+.terminal-dot{
+width:12px;
+height:12px;
+border-radius:50%;
+}
+
+.red{background:#ff5f56;}
+.yellow{background:#ffbd2e;}
+.green{background:#27c93f;}
+
+.terminal-body{
+padding:40px;
+font-family:monospace;
+line-height:2;
+color:#ffb36b;
+font-size:.95rem;
+}
+
+.terminal-end{
+margin-top:20px;
+color:#ff7b00;
+text-shadow:0 0 12px rgba(255,123,0,.5);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section{
+padding:120px 7%;
+background:#080808;
+}
+
+.contact-card{
+max-width:850px;
+margin:auto;
+background:#0f0f10;
+border:1px solid #27272a;
+border-radius:30px;
+padding:60px;
+text-align:center;
+box-shadow:0 0 40px rgba(255,123,0,.08);
+}
+
+.contact-card h3{
+font-size:clamp(2rem,4vw,3rem);
+margin-bottom:15px;
+}
+
+.contact-card h3 span{
+color:#ff7b00;
+}
+
+.contact-card p{
+margin-top:16px;
+color:#a1a1aa;
+font-size:1.05rem;
+}
+
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-top:36px;
+flex-wrap:wrap;
+}
+
+.contact-card a{
+color:#ff7b00;
+text-decoration:none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+padding:60px 7%;
+border-top:1px solid #27272a;
+background:#050505;
+}
+
+.footer-content{
+max-width:1300px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:30px;
+}
+
+.footer-content h3{
+font-size:1.5rem;
+margin-bottom:8px;
+}
+
+.footer-content p,
+.footer-copy{
+color:#71717a;
+font-size:.9rem;
+}
+
+/* =========================
+   CURSOR
+========================= */
+
+.custom-cursor{
+position:fixed;
+width:22px;
+height:22px;
+border-radius:50%;
+background:
+radial-gradient(circle,
+rgba(255,123,0,.9),
+rgba(255,123,0,.2));
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:9999;
+mix-blend-mode:screen;
+box-shadow:0 0 25px rgba(255,123,0,.8);
+}
+
+/* =========================
+   EMBERS
+========================= */
+
+.dynamic-ember{
+position:fixed;
+bottom:-20px;
+width:10px;
+height:10px;
+background:#ff7b00;
+border-radius:50%;
+pointer-events:none;
+filter:blur(2px);
+box-shadow:0 0 18px rgba(255,123,0,.8);
+animation:floatDynamic linear forwards;
+z-index:-1;
+}
+
+@keyframes floatDynamic{
+0%{
+transform:translateY(0) translateX(0);
+opacity:0;
+}
+20%{opacity:1;}
+100%{
+transform:translateY(-120vh) translateX(60px);
+opacity:0;
+}
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+.intro-grid,
+.community-grid,
+.stack-grid{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero-content{
+padding-top:100px;
+padding-bottom:110px;
+}
+
+.hero h1{
+letter-spacing:-2px;
+}
+
+.flow-line{
+display:none;
+}
+
+}
+
+@media(max-width:600px){
+
+body{
+cursor:auto;
+}
+
+.custom-cursor{
+display:none;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+.section,
+.dark-section,
+.community,
+.terminal-section,
+.contact-section{
+padding:80px 6%;
+}
+
+.contact-card{
+padding:40px 25px;
+}
+
+.stack-boxes{
+grid-template-columns:1fr;
+}
+
+.footer-content{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+*,
+*::before,
+*::after{
+animation-duration:.01ms !important;
+animation-iteration-count:1 !important;
+scroll-behavior:auto !important;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<div class="custom-cursor"></div>
 
-<section class="hero">
-
-<div class="hero-overlay"></div>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
 <div class="logo">
-
-BLACK <span>FYR3</span> SYSTEMS
-
+BLACK FYR3 <span>SYSTEMS</span>
 </div>
 
 <div class="nav-links">
-
-<a href="#about">About</a>
-<a href="#divisions">Divisions</a>
-<a href="#agents">AI Agents</a>
-<a href="#stack">Infrastructure</a>
+<a href="#solutions">Solutions</a>
+<a href="#projects">Projects</a>
+<a href="#community">Community</a>
+<a href="#technology">Technology</a>
 <a href="#contact">Contact</a>
-
 </div>
 
 </nav>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-overlay"></div>
+
 <div class="hero-content">
 
 <div class="hero-pill">
-
-BLACK FYR3 • AI • Automation • Digital Infrastructure
-
+<span>●</span>&nbsp; AI • ENGINEERING • DIGITAL INFRASTRUCTURE
 </div>
 
 <h1>
-
-Building The
-
-<span>
-Future Infrastructure
-</span>
-
-For Communities & Businesses
-
+BUILDING THE FUTURE
+<span>FOR BUSINESSES & COMMUNITIES.</span>
 </h1>
 
 <p>
-
-BLACK FYR3 SYSTEMS is a developing technology ecosystem
-focused on AI agents,
-workflow automation,
-websites,
-dashboards,
-inventory systems,
-and scalable digital infrastructure.
-
+BLACK FYR3 SYSTEMS designs practical technology systems that connect
+artificial intelligence, automation, websites, data, dashboards and
+digital infrastructure to solve real operational problems.
 </p>
 
 <div class="hero-buttons">
 
-<a href="#about" class="primary-btn">
-
-Explore The Vision
-
+<a href="#solutions" class="primary-btn">
+Explore Solutions
 </a>
 
-<a href="#agents" class="secondary-btn">
-
-AI Agent Network
-
+<a href="#projects" class="secondary-btn">
+View Projects
 </a>
 
 </div>
@@ -110,198 +1101,38 @@ AI Agent Network
 
 </section>
 
-<!-- LIVE STATUS -->
 
-<section class="live-status">
+<!-- =========================
+     BUSINESS INTRO
+========================= -->
 
-<div class="status-header">
+<section class="intro">
 
-<h2>
-BLACK FYR3 SYSTEM STATUS
-</h2>
-
-<p>
-Real-time infrastructure monitoring layer
-</p>
-
-</div>
-
-<div class="status-grid">
-
-<div class="status-box">
-
-<div class="pulse-dot"></div>
-
-<h3>
-AI Runtime
-</h3>
-
-<span>
-ONLINE
-</span>
-
-</div>
-
-<div class="status-box">
-
-<div class="pulse-dot"></div>
-
-<h3>
-Automation Layer
-</h3>
-
-<span>
-ACTIVE
-</span>
-
-</div>
-
-<div class="status-box">
-
-<div class="pulse-dot"></div>
-
-<h3>
-Deployment Systems
-</h3>
-
-<span>
-READY
-</span>
-
-</div>
-
-<div class="status-box">
-
-<div class="pulse-dot"></div>
-
-<h3>
-Analytics Grid
-</h3>
-
-<span>
-SYNCHRONIZED
-</span>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- METRICS -->
-
-<section class="metrics-section">
-
-<div class="metrics-grid">
-
-<div class="metric-card">
-
-<h2>
-12+
-</h2>
-
-<p>
-Infrastructure Systems
-</p>
-
-</div>
-
-<div class="metric-card">
-
-<h2>
-30+
-</h2>
-
-<p>
-Automation Pipelines
-</p>
-
-</div>
-
-<div class="metric-card">
-
-<h2>
-99%
-</h2>
-
-<p>
-Operational Runtime
-</p>
-
-</div>
-
-<div class="metric-card">
-
-<h2>
-24/7
-</h2>
-
-<p>
-AI Monitoring
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about" class="section">
-
-<div class="container about-grid">
+<div class="intro-grid">
 
 <div>
 
 <h2>
-
-What Is BLACK FYR3 SYSTEMS?
-
+Technology should solve a <span>problem.</span>
 </h2>
 
 <p>
-
-BLACK FYR3 SYSTEMS is a community-driven technology initiative
-designed to help organizations,
-entrepreneurs,
-creators,
-and businesses gain access to scalable and affordable digital infrastructure.
-
+Blackfyre Systems helps small businesses, organizations and community
+initiatives use modern technology without unnecessary complexity.
+We combine engineering thinking with software, AI, automation and data
+to create systems that are practical, scalable and understandable.
 </p>
+
+</div>
+
+<div class="intro-card">
+
+<h3>THE BLACKFYRE APPROACH</h3>
 
 <p>
-
-The ecosystem combines AI systems,
-automation workflows,
-websites,
-dashboards,
-media systems,
-inventory tools,
-and operational infrastructure into one scalable network.
-
+Identify the problem. Define the requirements. Design the system.
+Build it. Test it. Deploy it. Measure the result. Improve it.
 </p>
-
-</div>
-
-<div class="mission-card">
-
-<h3>
-
-Core Mission
-
-</h3>
-
-<div class="mission-list">
-
-<div>• Reduce technology barriers</div>
-<div>• Build affordable AI infrastructure</div>
-<div>• Modernize operational systems</div>
-<div>• Create scalable ecosystems</div>
-<div>• Automate repetitive workflows</div>
-<div>• Support communities through technology</div>
-
-</div>
 
 </div>
 
@@ -309,24 +1140,245 @@ Core Mission
 
 </section>
 
-<!-- DIVISIONS -->
 
-<section id="divisions" class="dark-section">
+<!-- =========================
+     PROBLEMS
+========================= -->
+
+<section class="section">
 
 <div class="container">
 
 <div class="section-header">
 
 <h2>
-
-BLACK FYR3 Divisions
-
+REAL PROBLEMS. <span>PRACTICAL SYSTEMS.</span>
 </h2>
 
 <p>
+Technology is valuable when it saves time, improves access to
+information, increases visibility or creates new opportunities.
+</p>
 
-Modular infrastructure systems engineered to work together.
+</div>
 
+<div class="problem-grid">
+
+<div class="problem-card">
+<div class="number">01 / VISIBILITY</div>
+<h3>Hard to Be Found</h3>
+<p>
+Businesses and organizations need professional digital presences
+that help customers discover them and understand what they offer.
+</p>
+</div>
+
+<div class="problem-card">
+<div class="number">02 / OPERATIONS</div>
+<h3>Too Much Manual Work</h3>
+<p>
+Repetitive intake, communication and administrative tasks can consume
+valuable time that could be spent serving customers.
+</p>
+</div>
+
+<div class="problem-card">
+<div class="number">03 / INFORMATION</div>
+<h3>Data Without Clarity</h3>
+<p>
+Organizations may have information available but lack useful dashboards
+and systems that turn it into understandable insight.
+</p>
+</div>
+
+<div class="problem-card">
+<div class="number">04 / ACCESS</div>
+<h3>Technology Gaps</h3>
+<p>
+Small organizations and community initiatives may need technology
+solutions without the resources of a large enterprise.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SOLUTIONS
+========================= -->
+
+<section class="dark-section" id="solutions">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+WHAT WE <span>BUILD</span>
+</h2>
+
+<p>
+Modular technology services designed around the customer's actual
+problem, budget and desired outcome.
+</p>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<div class="service-number">01 / DIGITAL SYSTEMS</div>
+
+<h3>Websites & Digital Presence</h3>
+
+<p>
+Professional websites and digital systems designed to communicate
+your organization clearly and create a path from visitor to inquiry.
+</p>
+
+<ul>
+<li>Business websites</li>
+<li>Landing pages</li>
+<li>Customer intake</li>
+<li>Digital portals</li>
+</ul>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-number">02 / INTELLIGENCE</div>
+
+<h3>AI & Automation</h3>
+
+<p>
+AI-assisted systems and automated workflows designed to reduce
+repetitive work and improve operational efficiency.
+</p>
+
+<ul>
+<li>AI assistants</li>
+<li>Workflow automation</li>
+<li>Customer intake</li>
+<li>Operational workflows</li>
+</ul>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-number">03 / DATA</div>
+
+<h3>Dashboards & Data Systems</h3>
+
+<p>
+Turn information into useful dashboards, reports and visual systems
+that make complex information easier to understand.
+</p>
+
+<ul>
+<li>Custom dashboards</li>
+<li>Analytics</li>
+<li>Reporting systems</li>
+<li>Data visualization</li>
+</ul>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-number">04 / STRATEGY</div>
+
+<h3>Technology Consulting</h3>
+
+<p>
+Technology planning for organizations that need to understand what
+they have, what they need and what should be built next.
+</p>
+
+<ul>
+<li>Technology assessments</li>
+<li>System roadmaps</li>
+<li>Implementation planning</li>
+<li>Digital strategy</li>
+</ul>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-number">05 / COMMUNITY</div>
+
+<h3>Community Technology</h3>
+
+<p>
+Digital systems designed to improve access to information, education,
+engagement and technology within communities.
+</p>
+
+<ul>
+<li>Community dashboards</li>
+<li>Public information tools</li>
+<li>Digital access systems</li>
+<li>Technology workshops</li>
+</ul>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-number">06 / CONTINUITY</div>
+
+<h3>Maintenance & Support</h3>
+
+<p>
+Technology doesn't end at launch. Ongoing support keeps systems
+updated, functional and aligned with changing needs.
+</p>
+
+<ul>
+<li>Maintenance</li>
+<li>Optimization</li>
+<li>Monitoring</li>
+<li>Technical support</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DIVISIONS
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+THE BLACK FYR3 <span>ECOSYSTEM</span>
+</h2>
+
+<p>
+Our technology capabilities are organized into connected systems
+rather than isolated services.
 </p>
 
 </div>
@@ -335,81 +1387,56 @@ Modular infrastructure systems engineered to work together.
 
 <div class="division-card">
 
-<h3>
-
-BLACK FYR3 AI
-
-</h3>
+<h3>BLACK FYR3 AI</h3>
 
 <p>
-
-AI agents,
-workflow automation,
-local AI systems,
-operational tools,
-and scalable intelligence systems.
-
+AI agents, intelligent workflows, automation and operational
+intelligence designed around real-world use cases.
 </p>
+
+<div class="tag">ARTIFICIAL INTELLIGENCE</div>
 
 </div>
 
+
 <div class="division-card">
 
-<h3>
-
-BLACK FYR3 Web Systems
-
-</h3>
+<h3>BLACK FYR3 WEB</h3>
 
 <p>
-
-Websites,
-dashboards,
-deployment systems,
-cloud infrastructure,
-and operational portals.
-
+Websites, digital portals, customer intake systems and digital
+infrastructure for organizations and businesses.
 </p>
+
+<div class="tag">DIGITAL SYSTEMS</div>
 
 </div>
 
+
 <div class="division-card">
 
-<h3>
-
-BLACK FYR3 Media
-
-</h3>
+<h3>BLACK FYR3 DATA</h3>
 
 <p>
-
-Branding,
-graphics,
-content systems,
-digital campaigns,
-and media infrastructure.
-
+Dashboards, analytics, reporting systems and data visualization
+designed to make information actionable.
 </p>
+
+<div class="tag">DATA SYSTEMS</div>
 
 </div>
 
+
 <div class="division-card">
 
-<h3>
-
-BLACK FYR3 Data Systems
-
-</h3>
+<h3>BLACK FYR3 COMMUNITY</h3>
 
 <p>
-
-Analytics,
-inventory tracking,
-dashboards,
-reports,
-and operational intelligence systems.
-
+Technology initiatives designed to support communities through
+accessible information, education and digital infrastructure.
 </p>
+
+<div class="tag">COMMUNITY TECHNOLOGY</div>
 
 </div>
 
@@ -419,80 +1446,79 @@ and operational intelligence systems.
 
 </section>
 
-<!-- FLOW -->
+
+<!-- =========================
+     SYSTEM FLOW
+========================= -->
 
 <section class="flow-section">
-
-<div class="section-header">
-
-<h2>
-BLACK FYR3 Ecosystem
-</h2>
-
-<p>
-Connected operational infrastructure architecture
-</p>
-
-</div>
-
-<div class="flow-grid">
-
-<div class="flow-box">
-AI Systems
-</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-box">
-Automation
-</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-box">
-Dashboards
-</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-box">
-Deployment
-</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-box">
-Analytics
-</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-box">
-Operations
-</div>
-
-</div>
-
-</section>
-
-<!-- AGENTS -->
-
-<section id="agents" class="section">
 
 <div class="container">
 
 <div class="section-header">
 
 <h2>
-
-BLACK FYR3 Agent Network
-
+FROM <span>PROBLEM</span> TO SYSTEM
 </h2>
 
 <p>
+Blackfyre approaches projects as structured technology implementations.
+</p>
 
-Specialized AI systems engineered to automate operations.
+</div>
 
+<div class="flow-grid">
+
+<div class="flow-box">PROBLEM</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-box">REQUIREMENTS</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-box">DESIGN</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-box">BUILD</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-box">TEST</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-box">DEPLOY</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-box">IMPROVE</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AI AGENTS
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+BLACK FYR3 <span>AI AGENT NETWORK</span>
+</h2>
+
+<p>
+A modular approach to specialized AI systems for different business
+and organizational functions.
 </p>
 
 </div>
@@ -501,92 +1527,83 @@ Specialized AI systems engineered to automate operations.
 
 <div class="agent-card">
 
-<h3>
-Intake Agent
-</h3>
+<div class="agent-code">AGENT_001</div>
+
+<h3>INTAKE AGENT</h3>
 
 <p>
-
-AI-powered onboarding and operational intake systems.
-
+Assists with collecting and organizing incoming customer or
+organizational information.
 </p>
 
 </div>
 
+
 <div class="agent-card">
 
-<h3>
-Website Builder Agent
-</h3>
+<div class="agent-code">AGENT_002</div>
+
+<h3>WEBSITE AGENT</h3>
 
 <p>
-
-Website automation,
-deployment systems,
-and infrastructure support.
-
+Supports website planning, content organization and digital
+experience development.
 </p>
 
 </div>
 
+
 <div class="agent-card">
 
-<h3>
-Inventory Agent
-</h3>
+<div class="agent-code">AGENT_003</div>
+
+<h3>INVENTORY AGENT</h3>
 
 <p>
-
-Tracks inventory systems,
-analytics,
-and operational assets.
-
+Designed to explore automated inventory organization, tracking and
+operational information.
 </p>
 
 </div>
 
+
 <div class="agent-card">
 
-<h3>
-Community Agent
-</h3>
+<div class="agent-code">AGENT_004</div>
+
+<h3>COMMUNITY AGENT</h3>
 
 <p>
-
-Supports organizational systems and community infrastructure.
-
+Supports community information workflows and public-interest
+technology concepts.
 </p>
 
 </div>
 
+
 <div class="agent-card">
 
-<h3>
-Marketing Agent
-</h3>
+<div class="agent-code">AGENT_005</div>
+
+<h3>MARKETING AGENT</h3>
 
 <p>
-
-AI-assisted campaigns,
-media systems,
-and operational outreach.
-
+Explores content planning, marketing workflows and digital
+communication support.
 </p>
 
 </div>
 
+
 <div class="agent-card">
 
-<h3>
-Data Systems Agent
-</h3>
+<div class="agent-code">AGENT_006</div>
+
+<h3>DATA AGENT</h3>
 
 <p>
-
-Analytics infrastructure,
-reporting systems,
-and operational intelligence.
-
+Designed to support data organization, analysis and dashboard
+development.
 </p>
 
 </div>
@@ -597,7 +1614,287 @@ and operational intelligence.
 
 </section>
 
-<!-- TERMINAL -->
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="dark-section" id="projects">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+FEATURED <span>PROJECTS</span>
+</h2>
+
+<p>
+Technology projects developed within the Blackfyre Systems ecosystem.
+</p>
+
+</div>
+
+<div class="projects-grid">
+
+
+<div class="project-card">
+
+<div class="project-status">
+PROJECT / DEVELOPMENT
+</div>
+
+<h3>MediaForge AI</h3>
+
+<p>
+An AI-assisted digital media and content workflow project exploring
+tools for creators, entrepreneurs and organizations.
+</p>
+
+<a
+href="https://celereontechnologies.github.io/blackfyre-site/#contact"
+class="project-link"
+target="_blank">
+VIEW PROJECT →
+</a>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-status">
+PROJECT / DEVELOPMENT
+</div>
+
+<h3>Blackfyre Environmental Intelligence</h3>
+
+<p>
+A proposed community technology platform focused on presenting
+environmental and public information through accessible dashboards
+and data visualization.
+</p>
+
+<a href="#community" class="project-link">
+LEARN MORE →
+</a>
+
+</div>
+
+
+<div class="project-card">
+
+<div class="project-status">
+SYSTEM / DEVELOPMENT
+</div>
+
+<h3>AI Agent Network</h3>
+
+<p>
+A modular collection of specialized AI concepts designed to support
+intake, websites, marketing, data and community technology.
+</p>
+
+<a href="#technology" class="project-link">
+EXPLORE SYSTEM →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNITY
+========================= -->
+
+<section class="section community" id="community">
+
+<div class="container">
+
+<div class="community-grid">
+
+<div>
+
+<h2>
+TECHNOLOGY WITH <span>COMMUNITY IMPACT.</span>
+</h2>
+
+<p>
+Blackfyre Systems is developing a community-focused technology
+approach alongside its commercial services. The objective is to
+make useful information and digital tools more accessible to
+organizations and communities.
+</p>
+
+<div class="community-list">
+
+<div class="community-item">
+<span>01</span>
+Public information dashboards
+</div>
+
+<div class="community-item">
+<span>02</span>
+Environmental information systems
+</div>
+
+<div class="community-item">
+<span>03</span>
+Community reporting concepts
+</div>
+
+<div class="community-item">
+<span>04</span>
+Digital access and education
+</div>
+
+<div class="community-item">
+<span>05</span>
+Community technology workshops
+</div>
+
+</div>
+
+</div>
+
+<div class="intro-card">
+
+<h3>BLACKFYRE ENVIRONMENTAL INTELLIGENCE</h3>
+
+<p>
+BEI is a developing Blackfyre Systems project exploring how public
+environmental data can be presented in a way that is understandable
+and useful to communities.
+</p>
+
+<br>
+
+<p>
+The project is intended to demonstrate Blackfyre's capabilities in
+data integration, visualization, community technology and accessible
+information systems.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TECHNOLOGY
+========================= -->
+
+<section class="section" id="technology">
+
+<div class="container">
+
+<div class="stack-grid">
+
+<div>
+
+<h2>
+BUILT WITH <span style="color:#ff7b00;">MODERN INFRASTRUCTURE.</span>
+</h2>
+
+<p>
+Blackfyre Systems explores scalable, accessible and modular
+technology infrastructure. The technology stack is selected based
+on project requirements rather than technology for technology's sake.
+</p>
+
+<br>
+
+<p>
+Open-source tools, cloud infrastructure, APIs, databases,
+automation platforms and AI frameworks can be combined into
+systems tailored to the customer's needs.
+</p>
+
+</div>
+
+<div class="stack-boxes">
+
+<div class="stack-box">AI</div>
+<div class="stack-box">AUTOMATION</div>
+<div class="stack-box">DATA</div>
+<div class="stack-box">APIs</div>
+<div class="stack-box">CLOUD</div>
+<div class="stack-box">DATABASES</div>
+<div class="stack-box">WEB</div>
+<div class="stack-box">OPEN SOURCE</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DEVELOPMENT STATUS
+========================= -->
+
+<section class="dark-section">
+
+<div class="container">
+
+<div class="section-header">
+
+<h2>
+BLACK FYR3 <span>DEVELOPMENT STATUS</span>
+</h2>
+
+<p>
+An emerging technology company building systems, products and
+services through continuous development.
+</p>
+
+</div>
+
+<div class="metrics-grid">
+
+<div class="metric-card">
+<h2>AI</h2>
+<p>Systems & Agents</p>
+</div>
+
+<div class="metric-card">
+<h2>WEB</h2>
+<p>Digital Systems</p>
+</div>
+
+<div class="metric-card">
+<h2>DATA</h2>
+<p>Dashboards & Intelligence</p>
+</div>
+
+<div class="metric-card">
+<h2>COMMUNITY</h2>
+<p>Technology Initiatives</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TERMINAL
+========================= -->
 
 <section class="terminal-section">
 
@@ -613,46 +1910,20 @@ and operational intelligence.
 
 <div class="terminal-body">
 
-</div>
+<div id="terminal-output">
+
+&gt; INITIALIZING BLACK FYR3 SYSTEMS...<br>
+&gt; LOADING AI INFRASTRUCTURE...<br>
+&gt; LOADING DIGITAL SYSTEMS...<br>
+&gt; CONNECTING DATA LAYER...<br>
+&gt; INITIALIZING COMMUNITY TECHNOLOGY...<br>
+&gt; SYSTEM ARCHITECTURE READY.
 
 </div>
 
-</section>
-
-<!-- STACK -->
-
-<section id="stack" class="dark-section">
-
-<div class="container stack-grid">
-
-<div>
-
-<h2>
-
-Infrastructure Stack
-
-</h2>
-
-<p>
-
-BLACK FYR3 SYSTEMS is being developed using scalable,
-affordable,
-and open-source infrastructure systems engineered for experimentation and growth.
-
-</p>
-
+<div class="terminal-end">
+&gt; BUILD THE SYSTEM. SOLVE THE PROBLEM.
 </div>
-
-<div class="stack-boxes">
-
-<div class="stack-box">Ollama</div>
-<div class="stack-box">Open WebUI</div>
-<div class="stack-box">n8n</div>
-<div class="stack-box">Flowise</div>
-<div class="stack-box">Docker</div>
-<div class="stack-box">Supabase</div>
-<div class="stack-box">GitHub</div>
-<div class="stack-box">GitHub Pages</div>
 
 </div>
 
@@ -660,85 +1931,38 @@ and open-source infrastructure systems engineered for experimentation and growth
 
 </section>
 
-<!-- CONTACT -->
 
-<section id="contact" class="section">
+<!-- =========================
+     CONTACT
+========================= -->
 
-<div class="container">
-
-<div class="section-header">
-
-<h2>
-
-Contact Infrastructure
-
-</h2>
-
-<p>
-
-Connect with BLACK FYR3 SYSTEMS.
-
-</p>
-
-</div>
+<section class="contact-section" id="contact">
 
 <div class="contact-card">
 
 <h3>
-
-Jose Mendoza
-
+HAVE A TECHNOLOGY <span>PROBLEM?</span>
 </h3>
 
 <p>
-
-Mechanical Engineer
-
-</p>
-
-<p>
-
-Compton, California
-
-</p>
-
-<p>
-
-<a href="mailto:blackfyresytems@gmail.com">
-
-blackfyresytems@gmail.com
-
-</a>
-
-</p>
-
-<p>
-
-<a href="tel:13106672849">
-
-310-667-2849
-
-</a>
-
+Tell us what you're trying to accomplish. Blackfyre Systems can
+help evaluate the problem, identify an appropriate technology
+approach and determine the next step.
 </p>
 
 <div class="contact-buttons">
 
-<a href="mailto:blackfyresytems@gmail.com"
+<a
+href="mailto:blackfyr3systems@gmail.com"
 class="primary-btn">
-
-Email Systems
-
+Start a Project
 </a>
 
-<a href="tel:13106672849"
+<a
+href="#solutions"
 class="secondary-btn">
-
-Call Infrastructure
-
+Explore Solutions
 </a>
-
-</div>
 
 </div>
 
@@ -746,24 +1970,23 @@ Call Infrastructure
 
 </section>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<div class="container footer-content">
+<div class="footer-content">
 
 <div>
 
 <h3>
-
-BLACK FYR3 SYSTEMS
-
+BLACK FYR3 <span style="color:#ff7b00;">SYSTEMS</span>
 </h3>
 
 <p>
-
-Engineering scalable AI infrastructure & digital ecosystems.
-
+AI • Engineering • Digital Infrastructure
 </p>
 
 </div>
@@ -778,8 +2001,187 @@ Engineering scalable AI infrastructure & digital ecosystems.
 
 </footer>
 
-<script src="script.js"></script>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* CUSTOM CURSOR */
+
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove",(e)=>{
+
+if(cursor){
+
+cursor.style.left = e.clientX + "px";
+cursor.style.top = e.clientY + "px";
+
+}
+
+});
+
+
+/* EMBERS */
+
+function createEmber(){
+
+const ember = document.createElement("div");
+
+ember.classList.add("dynamic-ember");
+
+ember.style.left =
+Math.random() * 100 + "vw";
+
+ember.style.animationDuration =
+(5 + Math.random() * 7) + "s";
+
+ember.style.width =
+(4 + Math.random() * 8) + "px";
+
+ember.style.height =
+ember.style.width;
+
+document.body.appendChild(ember);
+
+setTimeout(()=>{
+
+ember.remove();
+
+},12000);
+
+}
+
+setInterval(createEmber,650);
+
+
+/* TERMINAL TYPING */
+
+const terminalLines = [
+
+"> SYSTEM: BLACK FYR3 SYSTEMS",
+"> MODE: TECHNOLOGY DEVELOPMENT",
+"> AI: READY",
+"> AUTOMATION: READY",
+"> DATA: READY",
+"> WEB SYSTEMS: READY",
+"> COMMUNITY SYSTEMS: READY",
+"> STATUS: BUILDING"
+];
+
+const terminalOutput =
+document.getElementById("terminal-output");
+
+let lineIndex = 0;
+
+function typeTerminal(){
+
+if(!terminalOutput) return;
+
+if(lineIndex >= terminalLines.length){
+
+return;
+
+}
+
+const line = document.createElement("div");
+
+line.textContent = terminalLines[lineIndex];
+
+line.style.opacity = "0";
+
+terminalOutput.appendChild(line);
+
+setTimeout(()=>{
+
+line.style.transition = "opacity .5s";
+
+line.style.opacity = "1";
+
+},100);
+
+lineIndex++;
+
+setTimeout(typeTerminal,650);
+
+}
+
+setTimeout(typeTerminal,1200);
+
+
+/* SCROLL REVEALS */
+
+const revealElements = document.querySelectorAll(
+".service-card, .division-card, .agent-card, .project-card, .problem-card, .metric-card"
+);
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = "1";
+
+entry.target.style.transform = "translateY(0)";
+
+}
+
+});
+
+},
+{
+threshold:.12
+}
+);
+
+revealElements.forEach(el=>{
+
+el.style.opacity = "0";
+
+el.style.transform = "translateY(35px)";
+
+el.style.transition =
+"opacity .7s ease, transform .7s ease";
+
+observer.observe(el);
+
+});
+
+
+/* NAVIGATION */
+
+document.querySelectorAll(
+'a[href^="#"]'
+).forEach(link=>{
+
+link.addEventListener("click",(e)=>{
+
+const target =
+document.querySelector(
+link.getAttribute("href")
+);
+
+if(target){
+
+e.preventDefault();
+
+target.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+});
+
+});
+
+</script>
 
 </body>
-
 </html>
