@@ -1,214 +1,386 @@
-// ========================================
-// BLACK FYR3 SYSTEMS
-// INFRASTRUCTURE SCRIPT LAYER
-// ========================================
+/* =========================================================
+   BLACK FYR3 SYSTEMS
+   Main JavaScript
+   ========================================================= */
 
-// TERMINAL TYPING EFFECT
+document.addEventListener("DOMContentLoaded", () => {
 
-const terminalLines = [
+  /* ---------------------------------------------------------
+     1. HEADER / NAVIGATION
+     --------------------------------------------------------- */
 
-"> Booting BLACK FYR3 infrastructure...",
-"> Initializing AI systems...",
-"> Connecting automation pipelines...",
-"> Deployment network online...",
-"> Analytics systems synchronized...",
-"> Infrastructure runtime: ACTIVE",
-"> BLACK FYR3 SYSTEMS READY"
+  const header = document.querySelector("header");
+  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("nav");
 
-];
+  window.addEventListener("scroll", () => {
+    if (!header) return;
 
-const terminalBody = document.querySelector(".terminal-body");
+    if (window.scrollY > 40) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
 
-if (terminalBody) {
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      navToggle.classList.toggle("active");
+    });
+  }
 
-terminalBody.innerHTML = "";
+  /* Close mobile navigation after selecting a link */
 
-let lineIndex = 0;
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (nav) nav.classList.remove("active");
+      if (navToggle) navToggle.classList.remove("active");
+    });
+  });
 
-function typeLine() {
 
-if (lineIndex >= terminalLines.length) return;
+  /* ---------------------------------------------------------
+     2. SMOOTH SCROLLING
+     --------------------------------------------------------- */
 
-const line = document.createElement("p");
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-terminalBody.appendChild(line);
+    anchor.addEventListener("click", function (event) {
 
-let charIndex = 0;
+      const targetID = this.getAttribute("href");
 
-const typing = setInterval(() => {
+      if (!targetID || targetID === "#") return;
 
-line.textContent += terminalLines[lineIndex][charIndex];
+      const target = document.querySelector(targetID);
 
-charIndex++;
+      if (target) {
+        event.preventDefault();
 
-if (charIndex >= terminalLines[lineIndex].length) {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
 
-clearInterval(typing);
+    });
 
-lineIndex++;
+  });
 
-setTimeout(typeLine, 500);
 
-}
+  /* ---------------------------------------------------------
+     3. SCROLL REVEAL
+     --------------------------------------------------------- */
 
-}, 25);
+  const revealElements = document.querySelectorAll(
+    ".reveal, .fade-in, .project-card, .service-card, .problem-card, .stat, section"
+  );
 
-}
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
 
-typeLine();
+      entries.forEach(entry => {
 
-}
+        if (entry.isIntersecting) {
 
-// ========================================
-// COUNTER ANIMATIONS
-// ========================================
+          entry.target.classList.add("visible");
 
-const counters = document.querySelectorAll(".metric-card h2");
+          observer.unobserve(entry.target);
 
-counters.forEach(counter => {
+        }
 
-const targetText = counter.innerText;
+      });
 
-const target = parseInt(targetText);
+    },
+    {
+      threshold: 0.12
+    }
+  );
 
-if (isNaN(target)) return;
+  revealElements.forEach(element => {
+    element.classList.add("reveal-ready");
+    revealObserver.observe(element);
+  });
 
-let count = 0;
 
-const speed = target / 80;
+  /* ---------------------------------------------------------
+     4. ACTIVE NAVIGATION SECTION
+     --------------------------------------------------------- */
 
-function updateCounter() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
-count += speed;
+  const sectionObserver = new IntersectionObserver(
+    entries => {
 
-if (count < target) {
+      entries.forEach(entry => {
 
-counter.innerText = Math.floor(count);
+        if (entry.isIntersecting) {
 
-requestAnimationFrame(updateCounter);
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+          });
 
-} else {
+          const activeLink = document.querySelector(
+            `nav a[href="#${entry.target.id}"]`
+          );
 
-counter.innerText = targetText;
+          if (activeLink) {
+            activeLink.classList.add("active");
+          }
 
-}
+        }
 
-}
+      });
 
-updateCounter();
+    },
+    {
+      rootMargin: "-30% 0px -60% 0px"
+    }
+  );
+
+  sections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+
+
+  /* ---------------------------------------------------------
+     5. NUMBER COUNTERS
+     --------------------------------------------------------- */
+
+  const counters = document.querySelectorAll("[data-counter]");
+
+  const counterObserver = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+        const target = parseInt(counter.dataset.counter, 10);
+
+        if (isNaN(target)) return;
+
+        let current = 0;
+        const duration = 1400;
+        const increment = Math.max(1, target / (duration / 16));
+
+        const updateCounter = () => {
+
+          current += increment;
+
+          if (current >= target) {
+            counter.textContent = target.toLocaleString();
+            return;
+          }
+
+          counter.textContent = Math.floor(current).toLocaleString();
+
+          requestAnimationFrame(updateCounter);
+        };
+
+        updateCounter();
+
+        counterObserver.unobserve(counter);
+      });
+
+    },
+    {
+      threshold: 0.7
+    }
+  );
+
+  counters.forEach(counter => {
+    counterObserver.observe(counter);
+  });
+
+
+  /* ---------------------------------------------------------
+     6. CARD HOVER INTERACTION
+     --------------------------------------------------------- */
+
+  const cards = document.querySelectorAll(
+    ".service-card, .project-card, .problem-card, .feature-card"
+  );
+
+  cards.forEach(card => {
+
+    card.addEventListener("mousemove", event => {
+
+      const rect = card.getBoundingClientRect();
+
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      const rotateX =
+        ((y / rect.height) - 0.5) * -4;
+
+      const rotateY =
+        ((x / rect.width) - 0.5) * 4;
+
+      card.style.transform =
+        `perspective(800px)
+         rotateX(${rotateX}deg)
+         rotateY(${rotateY}deg)
+         translateY(-4px)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+
+  });
+
+
+  /* ---------------------------------------------------------
+     7. HERO PARALLAX
+     --------------------------------------------------------- */
+
+  const hero = document.querySelector(".hero");
+  const heroContent = document.querySelector(".hero-content");
+
+  window.addEventListener("scroll", () => {
+
+    if (!hero || !heroContent) return;
+
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition < window.innerHeight) {
+
+      heroContent.style.transform =
+        `translateY(${scrollPosition * 0.12}px)`;
+
+      heroContent.style.opacity =
+        Math.max(0, 1 - scrollPosition / 700);
+
+    }
+
+  });
+
+
+  /* ---------------------------------------------------------
+     8. SYSTEM STATUS
+     --------------------------------------------------------- */
+
+  const statusElements =
+    document.querySelectorAll("[data-system-status]");
+
+  statusElements.forEach(status => {
+
+    status.textContent = "SYSTEMS OPERATIONAL";
+    status.classList.add("operational");
+
+  });
+
+
+  /* ---------------------------------------------------------
+     9. CURRENT YEAR
+     --------------------------------------------------------- */
+
+  document.querySelectorAll("[data-year]").forEach(element => {
+    element.textContent = new Date().getFullYear();
+  });
+
+
+  /* ---------------------------------------------------------
+     10. CONTACT FORM
+     --------------------------------------------------------- */
+
+  const contactForm = document.querySelector("#contact-form");
+
+  if (contactForm) {
+
+    contactForm.addEventListener("submit", event => {
+
+      const submitButton =
+        contactForm.querySelector('button[type="submit"]');
+
+      if (submitButton) {
+
+        submitButton.textContent = "TRANSMITTING...";
+
+        submitButton.disabled = true;
+
+        setTimeout(() => {
+
+          submitButton.textContent = "MESSAGE READY";
+
+        }, 1200);
+
+      }
+
+    });
+
+  }
+
+
+  /* ---------------------------------------------------------
+     11. BUTTON MICRO-INTERACTIONS
+     --------------------------------------------------------- */
+
+  document.querySelectorAll("button, .btn").forEach(button => {
+
+    button.addEventListener("mousedown", () => {
+      button.classList.add("pressed");
+    });
+
+    button.addEventListener("mouseup", () => {
+      button.classList.remove("pressed");
+    });
+
+    button.addEventListener("mouseleave", () => {
+      button.classList.remove("pressed");
+    });
+
+  });
+
+
+  /* ---------------------------------------------------------
+     12. BACK TO TOP
+     --------------------------------------------------------- */
+
+  const backToTop = document.querySelector(".back-to-top");
+
+  if (backToTop) {
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 700) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+
+    });
+
+    backToTop.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+  }
+
+
+  /* ---------------------------------------------------------
+     13. BLACKFYRE SYSTEM INITIALIZATION
+     --------------------------------------------------------- */
+
+  document.body.classList.add("blackfyre-loaded");
+
+  console.log(
+    "%c BLACK FYR3 SYSTEMS ",
+    "background:#ff7800;color:#000;font-weight:bold;padding:8px 12px;"
+  );
+
+  console.log(
+    "%cSystems initialized successfully.",
+    "color:#ff7800;font-weight:bold;"
+  );
 
 });
-
-// ========================================
-// SCROLL REVEALS
-// ========================================
-
-const revealElements = document.querySelectorAll(
-
-".division-card, .agent-card, .metric-card, .status-box, .flow-box, .mission-card"
-
-);
-
-function revealOnScroll() {
-
-const triggerBottom = window.innerHeight * 0.88;
-
-revealElements.forEach(el => {
-
-const top = el.getBoundingClientRect().top;
-
-if (top < triggerBottom) {
-
-el.classList.add("reveal-active");
-
-}
-
-});
-
-}
-
-window.addEventListener("scroll", revealOnScroll);
-
-revealOnScroll();
-
-// ========================================
-// CUSTOM CURSOR
-// ========================================
-
-const cursor = document.createElement("div");
-
-cursor.classList.add("custom-cursor");
-
-document.body.appendChild(cursor);
-
-document.addEventListener("mousemove", e => {
-
-cursor.style.left = e.clientX + "px";
-cursor.style.top = e.clientY + "px";
-
-});
-
-// ========================================
-// PARALLAX EFFECT
-// ========================================
-
-window.addEventListener("scroll", () => {
-
-const scrollY = window.scrollY;
-
-document.body.style.backgroundPositionY = scrollY * 0.2 + "px";
-
-});
-
-// ========================================
-// FLOATING EMBERS
-// ========================================
-
-function createEmber() {
-
-const ember = document.createElement("div");
-
-ember.classList.add("dynamic-ember");
-
-document.body.appendChild(ember);
-
-ember.style.left =
-Math.random() * window.innerWidth + "px";
-
-ember.style.animationDuration =
-Math.random() * 4 + 4 + "s";
-
-ember.style.opacity = Math.random();
-
-setTimeout(() => {
-
-ember.remove();
-
-}, 8000);
-
-}
-
-setInterval(createEmber, 500);
-
-// ========================================
-// LIVE STATUS PULSE
-// ========================================
-
-const statusBoxes =
-document.querySelectorAll(".status-box span");
-
-setInterval(() => {
-
-statusBoxes.forEach(status => {
-
-status.style.opacity = "0.5";
-
-setTimeout(() => {
-
-status.style.opacity = "1";
-
-}, 300);
-
-});
-
-}, 2000);
