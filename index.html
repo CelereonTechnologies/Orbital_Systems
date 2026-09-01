@@ -1,684 +1,675 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Blackfyre Systems | Engineering Technology & Digital Infrastructure</title>
-
-  <meta name="description" content="Blackfyre Systems designs practical technology systems combining AI, automation, software, data, dashboards, and digital infrastructure to solve real-world problems for businesses and communities.">
-
-  <meta name="keywords" content="Blackfyre Systems, AI systems, digital infrastructure, automation, dashboards, civic technology, environmental intelligence, software engineering">
-
-  <meta name="author" content="Blackfyre Systems">
-
-  <meta property="og:title" content="Blackfyre Systems">
-  <meta property="og:description" content="Building the digital infrastructure for businesses & communities.">
-  <meta property="og:type" content="website">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #070707;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    :root {
-      --orange: #ff7200;
-      --orange-light: #ff8a1f;
-      --dark: #070707;
-      --panel: #101010;
-      --panel2: #141414;
-      --border: #292929;
-      --muted: #999;
-      --white: #f7f7f7;
-    }
-
-    /* NAVIGATION */
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 72px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 7%;
-      background: rgba(7,7,7,0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #202020;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-weight: 900;
-      letter-spacing: 2px;
-      font-size: 20px;
-    }
-
-    .logo span {
-      color: var(--orange);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .nav-links a {
-      color: #bbb;
-      transition: .2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--orange);
-    }
-
-    .nav-button {
-      border: 1px solid var(--orange);
-      padding: 9px 16px;
-      border-radius: 5px;
-      color: white !important;
-    }
-
-    .nav-button:hover {
-      background: var(--orange);
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 110px 8%;
-      border-bottom: 1px solid #202020;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      color: var(--orange);
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-    }
-
-    .section-intro {
-      max-width: 700px;
-      color: #aaa;
-      font-size: 17px;
-    }
-
-    .orange {
-      color: var(--orange);
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding-top: 130px;
-      background:
-        radial-gradient(circle at 15% 30%, rgba(255,114,0,.12), transparent 28%),
-        radial-gradient(circle at 90% 70%, rgba(255,114,0,.08), transparent 30%),
-        #070707;
-    }
-
-    .hero:after {
-      content: "";
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border: 1px solid rgba(255,114,0,.08);
-      border-radius: 50%;
-      right: -250px;
-      top: 120px;
-    }
-
-    .hero-content {
-      max-width: 1000px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero h1 {
-      font-size: clamp(52px, 9vw, 110px);
-      line-height: .91;
-      letter-spacing: -5px;
-      text-transform: uppercase;
-      margin-bottom: 35px;
-      max-width: 1050px;
-    }
-
-    .hero h1 span {
-      color: var(--orange);
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: #aaa;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 23px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      font-weight: bold;
-      font-size: 14px;
-      transition: .2s;
-    }
-
-    .btn-primary {
-      background: var(--orange);
-      color: #080808;
-      border-color: var(--orange);
-    }
-
-    .btn-primary:hover {
-      background: var(--orange-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-
-    /* PROBLEM */
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .problem-text p {
-      color: #aaa;
-      max-width: 650px;
-      margin-bottom: 18px;
-    }
-
-    .method-card {
-      background: linear-gradient(145deg, #151515, #0c0c0c);
-      border: 1px solid #303030;
-      padding: 35px;
-      border-radius: 14px;
-      position: relative;
-    }
-
-    .method-card:before {
-      content: "";
-      position: absolute;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--orange);
-      left: 25px;
-      top: -5px;
-      box-shadow: 0 0 20px var(--orange);
-    }
-
-    .method-card h3 {
-      color: var(--orange);
-      font-size: 15px;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
-    }
-
-    .method-card p {
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    /* BUILD */
-
-    .build-section {
-      background:
-        radial-gradient(circle at 80% 20%, rgba(255,114,0,.07), transparent 30%),
-        #080808;
-    }
-
-    .build-title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .build-title h2 {
-      text-transform: uppercase;
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .tech-card {
-      background: #101010;
-      border: 1px solid #292929;
-      border-radius: 10px;
-      padding: 30px;
-      min-height: 220px;
-      transition: .25s;
-    }
-
-    .tech-card:hover {
-      border-color: var(--orange);
-      transform: translateY(-5px);
-    }
-
-    .tech-number {
-      color: var(--orange);
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    .tech-card h3 {
-      margin: 18px 0 12px;
-      font-size: 21px;
-    }
-
-    .tech-card p {
-      color: #999;
-      font-size: 14px;
-    }
-
-    /* PROJECTS */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 55px;
-    }
-
-    .project-card {
-      background: #101010;
-      border: 1px solid #292929;
-      border-radius: 12px;
-      padding: 35px;
-      min-height: 330px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card:after {
-      content: "";
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,114,0,.15);
-      right: -90px;
-      bottom: -90px;
-    }
-
-    .project-number {
-      font-size: 11px;
-      color: var(--orange);
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .project-card h3 {
-      font-size: 29px;
-      margin: 22px 0 12px;
-    }
-
-    .project-card p {
-      color: #aaa;
-      font-size: 15px;
-      max-width: 600px;
-    }
-
-    .status {
-      display: inline-block;
-      margin-top: 25px;
-      border: 1px solid #444;
-      padding: 6px 10px;
-      border-radius: 20px;
-      font-size: 10px;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* METHOD */
-
-    .method-section {
-      background: #0b0b0b;
-    }
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 10px;
-      margin-top: 55px;
-    }
-
-    .process-step {
-      border-top: 2px solid var(--orange);
-      padding: 22px 12px;
-    }
-
-    .process-step span {
-      color: var(--orange);
-      font-size: 11px;
-      font-weight: bold;
-    }
-
-    .process-step h3 {
-      margin-top: 12px;
-      font-size: 17px;
-    }
-
-    .process-step p {
-      margin-top: 8px;
-      color: #888;
-      font-size: 12px;
-    }
-
-    /* WHO */
-
-    .serve-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      margin-top: 50px;
-    }
-
-    .serve-card {
-      padding: 28px;
-      background: #101010;
-      border: 1px solid #292929;
-      border-radius: 8px;
-    }
-
-    .serve-card h3 {
-      font-size: 17px;
-      margin-bottom: 10px;
-    }
-
-    .serve-card p {
-      color: #888;
-      font-size: 13px;
-    }
-
-    /* IMPACT */
-
-    .impact {
-      text-align: center;
-      background:
-        linear-gradient(rgba(255,114,0,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,114,0,.04) 1px, transparent 1px),
-        #080808;
-      background-size: 45px 45px;
-    }
-
-    .impact-content {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .impact h2 {
-      text-transform: uppercase;
-    }
-
-    .impact p {
-      color: #aaa;
-      font-size: 17px;
-    }
-
-    .impact-note {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 18px;
-      border: 1px solid #333;
-      border-radius: 6px;
-      color: #aaa;
-      font-size: 12px;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-    }
-
-    .about-grid p {
-      color: #aaa;
-      margin-bottom: 18px;
-    }
-
-    .principles {
-      border-left: 2px solid var(--orange);
-      padding-left: 30px;
-    }
-
-    .principles div {
-      margin-bottom: 25px;
-    }
-
-    .principles strong {
-      display: block;
-      color: white;
-      margin-bottom: 4px;
-    }
-
-    .principles span {
-      color: #888;
-      font-size: 13px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255,114,0,.12), transparent 40%),
-        #080808;
-      text-align: center;
-    }
-
-    .contact-content {
-      max-width: 750px;
-      margin: auto;
-    }
-
-    .contact h2 {
-      text-transform: uppercase;
-    }
-
-    .contact p {
-      color: #999;
-      margin-bottom: 35px;
-    }
-
-    .contact-box {
-      background: #111;
-      border: 1px solid #303030;
-      border-radius: 12px;
-      padding: 35px;
-      margin-top: 35px;
-      text-align: left;
-    }
-
-    .contact-box label {
-      display: block;
-      font-size: 12px;
-      color: #999;
-      margin-bottom: 7px;
-    }
-
-    .contact-box input,
-    .contact-box textarea {
-      width: 100%;
-      background: #080808;
-      border: 1px solid #303030;
-      color: white;
-      padding: 13px;
-      border-radius: 5px;
-      margin-bottom: 18px;
-      font-family: inherit;
-    }
-
-    .contact-box textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .contact-box input:focus,
-    .contact-box textarea:focus {
-      outline: none;
-      border-color: var(--orange);
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 45px 8%;
-      background: #050505;
-      border-top: 1px solid #202020;
-    }
-
-    .footer-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    footer p {
-      color: #666;
-      font-size: 12px;
-    }
-
-    .footer-brand {
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .footer-brand span {
-      color: var(--orange);
-    }
-
-    /* MOBILE */
-
-    @media(max-width: 850px) {
-
-      nav {
-        padding: 0 5%;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      section {
-        padding: 80px 6%;
-      }
-
-      .hero h1 {
-        font-size: clamp(48px, 14vw, 80px);
-        letter-spacing: -3px;
-      }
-
-      .problem-grid,
-      .project-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .tech-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .serve-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .process {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media(max-width: 550px) {
-
-      .tech-grid,
-      .serve-grid,
-      .process {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 90vh;
-      }
-
-      .hero h1 {
-        font-size: 50px;
-      }
-
-      h2 {
-        font-size: 38px;
-      }
-
-      .method-card,
-      .project-card,
-      .tech-card {
-        padding: 25px;
-      }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blackfyre Systems | Technology. Intelligence. Infrastructure.</title>
+
+<meta name="description" content="Blackfyre Systems builds practical technology systems combining artificial intelligence, automation, software, data, dashboards, and digital infrastructure for businesses and communities.">
+
+<meta name="keywords" content="Blackfyre Systems, AI systems, automation, software, digital infrastructure, data dashboards, civic technology, environmental intelligence">
+
+<meta name="author" content="Blackfyre Systems">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#f5f5f5;
+    line-height:1.6;
+}
+
+:root{
+    --orange:#ff6a00;
+    --orange2:#ff8c32;
+    --black:#050505;
+    --dark:#0b0b0b;
+    --panel:#111;
+    --border:#292929;
+    --muted:#999;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1150px,90%);
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+    border-bottom:1px solid #1c1c1c;
+}
+
+.orange{
+    color:var(--orange);
+}
+
+.eyebrow{
+    color:var(--orange);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 5%;
+    background:rgba(5,5,5,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #222;
+    z-index:999;
+}
+
+.logo{
+    font-size:19px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:var(--orange);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.nav-links a{
+    color:#aaa;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:var(--orange);
+}
+
+.nav-contact{
+    border:1px solid var(--orange);
+    padding:9px 15px;
+    border-radius:5px;
+    color:#fff!important;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:130px;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 10% 30%,rgba(255,106,0,.14),transparent 30%),
+    radial-gradient(circle at 90% 80%,rgba(255,106,0,.08),transparent 30%),
+    #050505;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(255,106,0,.08);
+    border-radius:50%;
+    right:-280px;
+    top:100px;
+}
+
+.hero-content{
+    max-width:1000px;
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:clamp(52px,9vw,105px);
+    line-height:.9;
+    letter-spacing:-5px;
+    text-transform:uppercase;
+    margin-bottom:35px;
+}
+
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero p{
+    max-width:700px;
+    color:#aaa;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 23px;
+    border-radius:5px;
+    border:1px solid #333;
+    font-weight:bold;
+    font-size:13px;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:var(--orange);
+    color:#080808;
+    border-color:var(--orange);
+}
+
+.btn-primary:hover{
+    background:var(--orange2);
+    transform:translateY(-2px);
+}
+
+.btn-secondary:hover{
+    border-color:var(--orange);
+    color:var(--orange);
+}
+
+/* INTRO */
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+h2{
+    font-size:clamp(38px,5vw,65px);
+    line-height:1;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+.intro-text p{
+    color:#aaa;
+    margin-bottom:18px;
+    max-width:650px;
+}
+
+.system-card{
+    background:linear-gradient(145deg,#151515,#0b0b0b);
+    border:1px solid #303030;
+    border-radius:12px;
+    padding:35px;
+}
+
+.system-card h3{
+    color:var(--orange);
+    font-size:14px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.system-card p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* PROBLEMS */
+
+.problem-section{
+    background:#090909;
+}
+
+.problem-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:50px;
+}
+
+.problem{
+    background:#101010;
+    border:1px solid #292929;
+    padding:28px;
+    border-radius:9px;
+    transition:.25s;
+}
+
+.problem:hover{
+    border-color:var(--orange);
+    transform:translateY(-5px);
+}
+
+.problem-number{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:bold;
+}
+
+.problem h3{
+    margin:18px 0 10px;
+    font-size:19px;
+}
+
+.problem p{
+    color:#888;
+    font-size:13px;
+}
+
+/* TECHNOLOGY */
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:55px;
+}
+
+.tech-card{
+    min-height:220px;
+    padding:30px;
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:10px;
+    transition:.25s;
+}
+
+.tech-card:hover{
+    border-color:var(--orange);
+    transform:translateY(-5px);
+}
+
+.tech-card .number{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.tech-card h3{
+    margin:18px 0 12px;
+    font-size:21px;
+}
+
+.tech-card p{
+    color:#909090;
+    font-size:14px;
+}
+
+/* PROJECTS */
+
+.projects{
+    background:#090909;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:55px;
+}
+
+.project{
+    background:#101010;
+    border:1px solid #2c2c2c;
+    border-radius:12px;
+    padding:35px;
+    min-height:350px;
+    position:relative;
+    overflow:hidden;
+}
+
+.project:after{
+    content:"";
+    position:absolute;
+    width:230px;
+    height:230px;
+    border:1px solid rgba(255,106,0,.12);
+    border-radius:50%;
+    right:-100px;
+    bottom:-100px;
+}
+
+.project-number{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.project h3{
+    font-size:28px;
+    margin:20px 0 15px;
+}
+
+.project p{
+    color:#999;
+    font-size:14px;
+    max-width:650px;
+}
+
+.status{
+    display:inline-block;
+    margin-top:25px;
+    padding:6px 11px;
+    border:1px solid #444;
+    border-radius:20px;
+    color:var(--orange);
+    font-size:10px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* METHOD */
+
+.method{
+    background:#0b0b0b;
+}
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
+    margin-top:55px;
+}
+
+.step{
+    border-top:2px solid var(--orange);
+    padding:20px 10px;
+}
+
+.step span{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:bold;
+}
+
+.step h3{
+    margin-top:10px;
+    font-size:17px;
+}
+
+.step p{
+    color:#858585;
+    font-size:12px;
+    margin-top:8px;
+}
+
+/* WHO */
+
+.serve-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:50px;
+}
+
+.serve{
+    padding:28px;
+    background:#101010;
+    border:1px solid #292929;
+    border-radius:9px;
+}
+
+.serve h3{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.serve p{
+    color:#888;
+    font-size:13px;
+}
+
+/* IMPACT */
+
+.impact{
+    text-align:center;
+    background:
+    linear-gradient(rgba(255,106,0,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,106,0,.035) 1px,transparent 1px),
+    #070707;
+    background-size:45px 45px;
+}
+
+.impact-content{
+    max-width:800px;
+    margin:auto;
+}
+
+.impact p{
+    color:#999;
+    font-size:17px;
+    margin-bottom:18px;
+}
+
+.impact-note{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 18px;
+    border:1px solid #333;
+    border-radius:5px;
+    color:#888;
+    font-size:11px;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+}
+
+.about p{
+    color:#999;
+    margin-bottom:18px;
+}
+
+.principles{
+    border-left:2px solid var(--orange);
+    padding-left:30px;
+}
+
+.principle{
+    margin-bottom:25px;
+}
+
+.principle strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.principle span{
+    color:#888;
+    font-size:13px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:
+    radial-gradient(circle at 50% 0%,rgba(255,106,0,.12),transparent 40%),
+    #080808;
+}
+
+.contact-content{
+    max-width:750px;
+    margin:auto;
+}
+
+.contact-intro{
+    color:#999;
+    margin-bottom:35px;
+}
+
+.contact-box{
+    background:#111;
+    border:1px solid #303030;
+    border-radius:12px;
+    padding:35px;
+}
+
+.contact-box label{
+    display:block;
+    color:#999;
+    font-size:12px;
+    margin-bottom:7px;
+}
+
+.contact-box input,
+.contact-box textarea{
+    width:100%;
+    background:#080808;
+    color:#fff;
+    border:1px solid #303030;
+    padding:13px;
+    border-radius:5px;
+    margin-bottom:18px;
+    font-family:inherit;
+}
+
+.contact-box textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus{
+    outline:none;
+    border-color:var(--orange);
+}
+
+/* FOOTER */
+
+footer{
+    padding:45px 0;
+    background:#040404;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.footer-brand{
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.footer-brand span{
+    color:var(--orange);
+}
+
+footer p{
+    color:#666;
+    font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-3px;
+    }
+
+    .intro-grid,
+    .project-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tech-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .problem-grid,
+    .serve-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:80px 0;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    h2{
+        font-size:40px;
+    }
+
+    .tech-grid,
+    .problem-grid,
+    .serve-grid,
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .project,
+    .tech-card,
+    .system-card{
+        padding:25px;
+    }
+}
+
+</style>
 </head>
 
 <body>
@@ -686,382 +677,560 @@
 <!-- NAVIGATION -->
 
 <nav>
-  <a href="#top" class="logo">BLACK <span>FYR3</span> SYSTEMS</a>
 
-  <ul class="nav-links">
-    <li><a href="#build">Technology</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#method">Method</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-button">Contact</a></li>
-  </ul>
+<a href="#home" class="logo">
+BLACK <span>FYR3</span> SYSTEMS
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#problems">Problems</a></li>
+<li><a href="#technology">Technology</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#method">Method</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact" class="nav-contact">Contact</a></li>
+
+</ul>
+
 </nav>
 
 
 <!-- HERO -->
 
-<section class="hero" id="top">
-  <div class="container hero-content">
+<section class="hero" id="home">
 
-    <div class="eyebrow">
-      Engineering Technology • Digital Infrastructure • Community Impact
-    </div>
+<div class="container hero-content">
 
-    <h1>
-      BUILDING THE<br>
-      <span>FUTURE</span><br>
-      FOR BUSINESSES<br>
-      & COMMUNITIES.
-    </h1>
+<div class="eyebrow">
+Engineering Technology • Digital Infrastructure • Community Impact
+</div>
 
-    <p>
-      Blackfyre Systems designs practical technology systems that connect
-      artificial intelligence, automation, software, data, dashboards and
-      digital infrastructure to solve real operational and community problems.
-    </p>
+<h1>
+BUILDING THE
+<br>
+<span>DIGITAL</span>
+<br>
+INFRASTRUCTURE
+<br>
+FOR WHAT'S NEXT.
+</h1>
 
-    <div class="buttons">
-      <a href="#build" class="btn btn-primary">Explore What We Build</a>
-      <a href="#projects" class="btn btn-secondary">View Projects</a>
-    </div>
+<p>
+Blackfyre Systems designs practical technology systems that combine
+artificial intelligence, automation, software, data and digital
+infrastructure to solve real-world problems for businesses and communities.
+</p>
 
-  </div>
+<div class="buttons">
+
+<a href="#technology" class="btn btn-primary">
+EXPLORE TECHNOLOGY
+</a>
+
+<a href="#projects" class="btn btn-secondary">
+VIEW PROJECTS
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- PROBLEM -->
+<!-- PHILOSOPHY -->
 
-<section id="problem">
-  <div class="container problem-grid">
+<section>
 
-    <div class="problem-text">
+<div class="container intro-grid">
 
-      <div class="eyebrow">01 / The Problem</div>
+<div class="intro-text">
 
-      <h2>
-        Technology should<br>
-        solve a <span class="orange">problem.</span>
-      </h2>
+<div class="eyebrow">
+01 / Philosophy
+</div>
 
-      <p>
-        Technology is only valuable when it creates practical value.
-        Blackfyre Systems focuses on understanding the problem first,
-        then designing technology around the actual need.
-      </p>
+<h2>
+Technology should solve a
+<span class="orange">problem.</span>
+</h2>
 
-      <p>
-        We combine engineering thinking with software, artificial
-        intelligence, automation and data to create systems that are
-        practical, understandable and scalable.
-      </p>
+<p>
+Technology is valuable when it creates practical value.
+Blackfyre Systems starts with the problem instead of starting
+with the technology.
+</p>
 
-    </div>
+<p>
+We identify the need, define the requirements, design the system,
+build the solution and continuously improve it.
+</p>
 
-    <div class="method-card">
+</div>
 
-      <h3>THE BLACKFYRE APPROACH</h3>
 
-      <p>
-        Identify the problem.<br>
-        Define the requirements.<br>
-        Design the system.<br>
-        Build it.<br>
-        Test it.<br>
-        Deploy it.<br>
-        Measure the result.<br>
-        Improve it.
-      </p>
+<div class="system-card">
 
-    </div>
+<h3>
+THE BLACKFYRE SYSTEM
+</h3>
 
-  </div>
+<p>
+Problem → Requirements → Architecture → Development →
+Deployment → Measurement → Improvement
+</p>
+
+<br>
+
+<p>
+The objective is not technology for technology's sake.
+The objective is a system that works.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- WHAT WE BUILD -->
+<!-- PROBLEMS -->
 
-<section class="build-section" id="build">
+<section class="problem-section" id="problems">
 
-  <div class="container">
+<div class="container">
 
-    <div class="build-title">
+<div class="eyebrow">
+02 / Problems We Solve
+</div>
 
-      <div class="eyebrow">02 / What We Build</div>
+<h2>
+REAL PROBLEMS.
+<br>
+<span class="orange">REAL SYSTEMS.</span>
+</h2>
 
-      <h2>
-        REAL PROBLEMS.<br>
-        <span class="orange">PRACTICAL SYSTEMS.</span>
-      </h2>
-
-      <p class="section-intro" style="margin:auto;">
-        Technology should make information easier to use, operations
-        easier to manage, and opportunities easier to access.
-      </p>
-
-    </div>
+<p style="color:#999;max-width:700px;">
+Many organizations already have technology—but their systems
+may not communicate, automate or present information effectively.
+Blackfyre focuses on closing those gaps.
+</p>
 
 
-    <div class="tech-grid">
+<div class="problem-grid">
 
-      <div class="tech-card">
-        <div class="tech-number">01 / AI</div>
-        <h3>AI Systems</h3>
-        <p>
-          AI-powered assistants, intelligent workflows, information tools
-          and practical automation designed around real use cases.
-        </p>
-      </div>
+<div class="problem">
 
-      <div class="tech-card">
-        <div class="tech-number">02 / DIGITAL</div>
-        <h3>Digital Platforms</h3>
-        <p>
-          Web applications, portals, custom software interfaces and
-          digital infrastructure built for specific organizational needs.
-        </p>
-      </div>
+<div class="problem-number">01</div>
 
-      <div class="tech-card">
-        <div class="tech-number">03 / DATA</div>
-        <h3>Data & Dashboards</h3>
-        <p>
-          Systems that organize complex information and transform it into
-          understandable, useful insight.
-        </p>
-      </div>
+<h3>Visibility</h3>
 
-      <div class="tech-card">
-        <div class="tech-number">04 / AUTOMATION</div>
-        <h3>Automation</h3>
-        <p>
-          Digital workflows that reduce repetitive administrative and
-          operational tasks.
-        </p>
-      </div>
+<p>
+Organizations can struggle to communicate what they do,
+where information is located and how people can access it.
+</p>
 
-      <div class="tech-card">
-        <div class="tech-number">05 / CIVIC</div>
-        <h3>Civic Technology</h3>
-        <p>
-          Digital tools designed to improve community access, communication,
-          information and engagement.
-        </p>
-      </div>
+</div>
 
-      <div class="tech-card">
-        <div class="tech-number">06 / ENVIRONMENT</div>
-        <h3>Environmental Intelligence</h3>
-        <p>
-          Technology for presenting and understanding environmental
-          monitoring and related public information.
-        </p>
-      </div>
 
-    </div>
+<div class="problem">
 
-  </div>
+<div class="problem-number">02</div>
+
+<h3>Operations</h3>
+
+<p>
+Manual processes can consume time that could be spent on
+higher-value work.
+</p>
+
+</div>
+
+
+<div class="problem">
+
+<div class="problem-number">03</div>
+
+<h3>Information</h3>
+
+<p>
+Data becomes more useful when it is organized, visualized
+and converted into understandable information.
+</p>
+
+</div>
+
+
+<div class="problem">
+
+<div class="problem-number">04</div>
+
+<h3>Access</h3>
+
+<p>
+Technology can help organizations and communities access
+information, services and opportunities more effectively.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TECHNOLOGY -->
+
+<section id="technology">
+
+<div class="container">
+
+<div class="eyebrow">
+03 / Technology
+</div>
+
+<h2>
+WHAT WE
+<br>
+<span class="orange">BUILD.</span>
+</h2>
+
+<p style="color:#999;max-width:700px;">
+Blackfyre develops technology around the requirements of
+the problem—not around a predetermined product.
+</p>
+
+
+<div class="tech-grid">
+
+<div class="tech-card">
+
+<div class="number">01 / AI</div>
+
+<h3>AI Systems</h3>
+
+<p>
+AI-powered assistants, intelligent workflows, information
+systems and practical automation.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="number">02 / SOFTWARE</div>
+
+<h3>Digital Platforms</h3>
+
+<p>
+Web applications, portals, custom interfaces and digital
+infrastructure designed around specific needs.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="number">03 / DATA</div>
+
+<h3>Data & Dashboards</h3>
+
+<p>
+Transform complex information into dashboards and interfaces
+that people can actually understand.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="number">04 / AUTOMATION</div>
+
+<h3>Automation</h3>
+
+<p>
+Digital workflows designed to reduce repetitive administrative
+and operational tasks.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="number">05 / CIVIC</div>
+
+<h3>Civic Technology</h3>
+
+<p>
+Technology designed to improve community access, communication,
+information and engagement.
+</p>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="number">06 / ENVIRONMENT</div>
+
+<h3>Environmental Intelligence</h3>
+
+<p>
+Digital tools for presenting and understanding environmental
+monitoring and related public information.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
 <!-- PROJECTS -->
 
-<section id="projects">
+<section class="projects" id="projects">
 
-  <div class="container">
+<div class="container">
 
-    <div class="eyebrow">03 / Projects</div>
+<div class="eyebrow">
+04 / Projects
+</div>
 
-    <h2>
-      WE DON'T JUST<br>
-      <span class="orange">TALK TECHNOLOGY.</span>
-    </h2>
+<h2>
+WE BUILD
+<br>
+<span class="orange">SYSTEMS.</span>
+</h2>
 
-    <p class="section-intro">
-      Blackfyre projects demonstrate how technology can be organized
-      around a real problem, a real audience and a practical outcome.
-    </p>
-
-
-    <div class="project-grid">
-
-      <div class="project-card">
-
-        <div class="project-number">
-          PROJECT 01
-        </div>
-
-        <h3>
-          Blackfyre Environmental Intelligence
-        </h3>
-
-        <p>
-          A community-oriented environmental intelligence concept designed
-          to bring environmental monitoring and public information into
-          an understandable digital experience.
-        </p>
-
-        <p style="margin-top:15px;">
-          The platform can present information from sources such as
-          particulate monitoring and other public environmental datasets
-          while helping users understand local conditions.
-        </p>
-
-        <div class="status">
-          Development / Pilot
-        </div>
-
-      </div>
+<p style="color:#999;max-width:700px;">
+Projects demonstrate how Blackfyre applies technology to
+specific problems and audiences.
+</p>
 
 
-      <div class="project-card">
+<div class="project-grid">
 
-        <div class="project-number">
-          PROJECT 02
-        </div>
 
-        <h3>
-          Blackfyre Digital Systems
-        </h3>
+<div class="project">
 
-        <p>
-          A broader technology development category for custom digital
-          infrastructure created for organizations and small businesses.
-        </p>
+<div class="project-number">
+PROJECT 01
+</div>
 
-        <p style="margin-top:15px;">
-          Systems may include websites, information systems, dashboards,
-          intake tools, workflow automation and custom digital interfaces.
-        </p>
+<h3>
+Blackfyre Environmental Intelligence
+</h3>
 
-        <div class="status">
-          Active Development
-        </div>
+<p>
+<strong style="color:#fff;">BEI</strong> is a community-oriented
+environmental intelligence concept designed to bring environmental
+monitoring and public information into an understandable digital
+experience.
+</p>
 
-      </div>
+<br>
 
-    </div>
+<p>
+The platform can present information from sources such as
+particulate monitoring and other public environmental datasets
+while helping users understand local conditions.
+</p>
 
-  </div>
+<div class="status">
+Development / Pilot
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-number">
+PROJECT 02
+</div>
+
+<h3>
+Blackfyre Digital Systems
+</h3>
+
+<p>
+A technology development category focused on custom digital
+infrastructure for organizations and small businesses.
+</p>
+
+<br>
+
+<p>
+Potential systems include websites, information systems,
+dashboards, intake tools, workflow automation and custom
+digital interfaces.
+</p>
+
+<div class="status">
+Active Development
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
 
 <!-- METHOD -->
 
-<section class="method-section" id="method">
+<section class="method" id="method">
 
-  <div class="container">
+<div class="container">
 
-    <div class="eyebrow">04 / The Blackfyre Method</div>
+<div class="eyebrow">
+05 / The Blackfyre Method
+</div>
 
-    <h2>
-      ENGINEERING<br>
-      <span class="orange">THE SOLUTION.</span>
-    </h2>
+<h2>
+ENGINEERING
+<br>
+<span class="orange">THE SOLUTION.</span>
+</h2>
 
-    <p class="section-intro">
-      Every system begins with a problem. The Blackfyre Method provides
-      a structured process for turning that problem into a practical
-      technology solution.
-    </p>
+<p style="color:#999;max-width:700px;">
+Every project begins with a problem. The Blackfyre Method
+provides a structured framework for turning that problem
+into a practical technology system.
+</p>
 
 
-    <div class="process">
+<div class="process">
 
-      <div class="process-step">
-        <span>01</span>
-        <h3>Define</h3>
-        <p>Understand the problem and requirements.</p>
-      </div>
+<div class="step">
+<span>01</span>
+<h3>Define</h3>
+<p>Understand the problem.</p>
+</div>
 
-      <div class="process-step">
-        <span>02</span>
-        <h3>Design</h3>
-        <p>Develop the architecture and system approach.</p>
-      </div>
+<div class="step">
+<span>02</span>
+<h3>Design</h3>
+<p>Develop the system architecture.</p>
+</div>
 
-      <div class="process-step">
-        <span>03</span>
-        <h3>Build</h3>
-        <p>Develop the actual technology solution.</p>
-      </div>
+<div class="step">
+<span>03</span>
+<h3>Build</h3>
+<p>Develop the technology.</p>
+</div>
 
-      <div class="process-step">
-        <span>04</span>
-        <h3>Deploy</h3>
-        <p>Put the system into practical use.</p>
-      </div>
+<div class="step">
+<span>04</span>
+<h3>Deploy</h3>
+<p>Put the system into operation.</p>
+</div>
 
-      <div class="process-step">
-        <span>05</span>
-        <h3>Measure</h3>
-        <p>Evaluate the result and identify improvements.</p>
-      </div>
+<div class="step">
+<span>05</span>
+<h3>Measure</h3>
+<p>Evaluate performance and outcomes.</p>
+</div>
 
-      <div class="process-step">
-        <span>06</span>
-        <h3>Improve</h3>
-        <p>Iterate and evolve the system.</p>
-      </div>
+<div class="step">
+<span>06</span>
+<h3>Improve</h3>
+<p>Iterate and evolve the system.</p>
+</div>
 
-    </div>
+</div>
 
-  </div>
+</div>
+
 </section>
 
 
 <!-- WHO WE SERVE -->
 
-<section id="serve">
+<section>
 
-  <div class="container">
+<div class="container">
 
-    <div class="eyebrow">05 / Who We Serve</div>
+<div class="eyebrow">
+06 / Who We Serve
+</div>
 
-    <h2>
-      TECHNOLOGY<br>
-      <span class="orange">FOR REAL PEOPLE.</span>
-    </h2>
+<h2>
+TECHNOLOGY
+<br>
+<span class="orange">FOR PEOPLE.</span>
+</h2>
 
-    <p class="section-intro">
-      Blackfyre focuses on organizations that need technology to be
-      useful, understandable and connected to a real objective.
-    </p>
+<p style="color:#999;max-width:700px;">
+Blackfyre focuses on organizations that need technology
+to be useful, understandable and connected to a real objective.
+</p>
 
 
-    <div class="serve-grid">
+<div class="serve-grid">
 
-      <div class="serve-card">
-        <h3>Small Businesses</h3>
-        <p>
-          Useful technology without unnecessary enterprise-level complexity.
-        </p>
-      </div>
+<div class="serve">
 
-      <div class="serve-card">
-        <h3>Organizations</h3>
-        <p>
-          Digital workflows, information access and operational tools.
-        </p>
-      </div>
+<h3>Small Businesses</h3>
 
-      <div class="serve-card">
-        <h3>Community Initiatives</h3>
-        <p>
-          Technology that makes information easier for communities to access
-          and understand.
-        </p>
-      </div>
+<p>
+Practical technology without unnecessary enterprise-level
+complexity.
+</p>
 
-      <div class="serve-card">
-        <h3>Civic & Environmental</h3>
-        <p>
-          Data, dashboards, monitoring and public-facing digital systems.
-        </p>
-      </div>
+</div>
 
-    </div>
 
-  </div>
+<div class="serve">
+
+<h3>Organizations</h3>
+
+<p>
+Digital workflows, information systems and operational tools.
+</p>
+
+</div>
+
+
+<div class="serve">
+
+<h3>Community Initiatives</h3>
+
+<p>
+Technology that makes useful information easier to access
+and understand.
+</p>
+
+</div>
+
+
+<div class="serve">
+
+<h3>Civic & Environmental</h3>
+
+<p>
+Data, dashboards, monitoring and public-facing systems.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
@@ -1069,111 +1238,134 @@
 
 <section class="impact">
 
-  <div class="container impact-content">
+<div class="container impact-content">
 
-    <div class="eyebrow">06 / Impact</div>
+<div class="eyebrow">
+07 / Impact
+</div>
 
-    <h2>
-      BUILD WITH<br>
-      <span class="orange">PURPOSE.</span>
-    </h2>
+<h2>
+BUILD WITH
+<br>
+<span class="orange">PURPOSE.</span>
+</h2>
 
-    <p>
-      Blackfyre Systems is being developed around a simple principle:
-      technology should create practical value.
-    </p>
+<p>
+Blackfyre Systems is being developed around a simple principle:
+technology should create practical value.
+</p>
 
-    <p style="margin-top:20px;">
-      As projects mature, we will document the systems we build,
-      the problems they address and measurable outcomes where
-      reliable evidence is available.
-    </p>
+<p>
+As projects mature, Blackfyre will document systems,
+problems addressed and measurable outcomes where reliable
+evidence is available.
+</p>
 
-    <div class="impact-note">
-      CREDIBILITY THROUGH PROJECTS • EVIDENCE • DOCUMENTATION • RESULTS
-    </div>
+<div class="impact-note">
+EVIDENCE • DOCUMENTATION • RESULTS • CONTINUOUS IMPROVEMENT
+</div>
 
-  </div>
+</div>
 
 </section>
 
 
 <!-- ABOUT -->
 
-<section id="about">
+<section class="about" id="about">
 
-  <div class="container about-grid">
+<div class="container about-grid">
 
-    <div>
+<div>
 
-      <div class="eyebrow">07 / About Blackfyre</div>
+<div class="eyebrow">
+08 / About
+</div>
 
-      <h2>
-        SYSTEMS<br>
-        <span class="orange">THINKING.</span>
-      </h2>
+<h2>
+SYSTEMS
+<br>
+<span class="orange">THINKING.</span>
+</h2>
 
-      <p>
-        Blackfyre Systems is a technology and engineering-oriented company
-        focused on building practical digital systems.
-      </p>
+<p>
+Blackfyre Systems is a technology and engineering-oriented
+company focused on building practical digital systems.
+</p>
 
-      <p>
-        The company combines software, artificial intelligence, automation,
-        data, dashboards and digital infrastructure to address operational,
-        organizational and community problems.
-      </p>
+<p>
+The company combines software, artificial intelligence,
+automation, data, dashboards and digital infrastructure to
+address operational, organizational and community problems.
+</p>
 
-      <p>
-        Blackfyre is not positioned simply as a website designer,
-        computer repair company or reseller. The focus is systems:
-        understanding the problem, designing the solution and building
-        technology that can create measurable value.
-      </p>
+<p>
+The focus is systems: understand the problem, engineer the
+solution, build it, deploy it and improve it.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="principles">
+<div class="principles">
 
-      <div>
-        <strong>Problem First</strong>
-        <span>
-          Technology begins with understanding the actual need.
-        </span>
-      </div>
+<div class="principle">
 
-      <div>
-        <strong>Engineering Mindset</strong>
-        <span>
-          Systems are designed around requirements, testing and improvement.
-        </span>
-      </div>
+<strong>Problem First</strong>
 
-      <div>
-        <strong>Practical Technology</strong>
-        <span>
-          Complexity should serve a purpose—not exist for its own sake.
-        </span>
-      </div>
+<span>
+Technology begins with understanding the actual need.
+</span>
 
-      <div>
-        <strong>Community Value</strong>
-        <span>
-          Technology can improve access to information and opportunity.
-        </span>
-      </div>
+</div>
 
-      <div>
-        <strong>Evidence Over Hype</strong>
-        <span>
-          Credibility comes from what is actually built and demonstrated.
-        </span>
-      </div>
 
-    </div>
+<div class="principle">
 
-  </div>
+<strong>Engineering Mindset</strong>
+
+<span>
+Systems are designed around requirements, testing and improvement.
+</span>
+
+</div>
+
+
+<div class="principle">
+
+<strong>Practical Technology</strong>
+
+<span>
+Complexity should serve a purpose.
+</span>
+
+</div>
+
+
+<div class="principle">
+
+<strong>Community Value</strong>
+
+<span>
+Technology can improve access to information and opportunity.
+</span>
+
+</div>
+
+
+<div class="principle">
+
+<strong>Evidence Over Hype</strong>
+
+<span>
+Credibility comes from what is actually built and demonstrated.
+</span>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1182,48 +1374,82 @@
 
 <section class="contact" id="contact">
 
-  <div class="container contact-content">
+<div class="container contact-content">
 
-    <div class="eyebrow">08 / Start a Conversation</div>
+<div class="eyebrow">
+09 / Start a Project
+</div>
 
-    <h2>
-      HAVE A PROBLEM<br>
-      TECHNOLOGY COULD <span class="orange">SOLVE?</span>
-    </h2>
+<h2>
+HAVE A PROBLEM
+<br>
+TECHNOLOGY COULD
+<br>
+<span class="orange">SOLVE?</span>
+</h2>
 
-    <p>
-      Tell us what you're trying to accomplish. The first step is
-      understanding the problem.
-    </p>
+<p class="contact-intro">
+Tell us what you're trying to accomplish.
+The first step is understanding the problem.
+</p>
 
-    <div class="contact-box">
 
-      <form action="mailto:blackfyresystems@gmail.com"
-            method="post"
-            enctype="text/plain">
+<div class="contact-box">
 
-        <label>Name</label>
-        <input type="text" name="Name" placeholder="Your name">
+<form action="mailto:blackfyresystems@gmail.com"
+method="post"
+enctype="text/plain">
 
-        <label>Email</label>
-        <input type="email" name="Email" placeholder="Your email">
+<label>Name</label>
 
-        <label>Organization / Business</label>
-        <input type="text" name="Organization" placeholder="Organization or business">
+<input
+type="text"
+name="Name"
+placeholder="Your name"
+required
+>
 
-        <label>What problem are you trying to solve?</label>
-        <textarea name="Message"
-          placeholder="Tell us what you're trying to accomplish..."></textarea>
 
-        <button type="submit" class="btn btn-primary">
-          Start the Conversation
-        </button>
+<label>Email</label>
 
-      </form>
+<input
+type="email"
+name="Email"
+placeholder="Your email"
+required
+>
 
-    </div>
 
-  </div>
+<label>Organization / Business</label>
+
+<input
+type="text"
+name="Organization"
+placeholder="Organization or business"
+>
+
+
+<label>What problem are you trying to solve?</label>
+
+<textarea
+name="Message"
+placeholder="Tell us what you're trying to accomplish..."
+required
+></textarea>
+
+
+<button
+type="submit"
+class="btn btn-primary"
+>
+START THE CONVERSATION
+</button>
+
+</form>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1232,28 +1458,31 @@
 
 <footer>
 
-  <div class="footer-grid">
+<div class="container footer">
 
-    <div>
-      <div class="footer-brand">
-        BLACK <span>FYR3</span> SYSTEMS
-      </div>
+<div>
 
-      <p style="margin-top:8px;">
-        Engineering Technology • Digital Infrastructure • Community Impact
-      </p>
-    </div>
+<div class="footer-brand">
+BLACK <span>FYR3</span> SYSTEMS
+</div>
 
-    <div>
-      <p>
-        © 2026 Blackfyre Systems. Building practical technology systems.
-      </p>
-    </div>
+<p style="margin-top:8px;">
+Engineering Technology • Digital Infrastructure • Community Impact
+</p>
 
-  </div>
+</div>
+
+<div>
+
+<p>
+© 2026 Blackfyre Systems
+</p>
+
+</div>
+
+</div>
 
 </footer>
-
 
 </body>
 </html>
